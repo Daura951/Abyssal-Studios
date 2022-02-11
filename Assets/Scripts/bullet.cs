@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class bullet : MonoBehaviour
+
 {
+    private int damage;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        damage = 1;
     }
 
     // Update is called once per frame
@@ -20,5 +23,10 @@ public class bullet : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground")
         Destroy(this.gameObject);
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+        }
     }
 }
