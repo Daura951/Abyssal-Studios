@@ -8,15 +8,37 @@ public class player : MonoBehaviour
     private bool isGrounded;
     private bool isRight = true;
 
+    //general Player movement
     public float speed;
     public float jumpForce;
     public Transform bulletOrigin;
     public GameObject bullet;
 
+    //for dash
+    private bool isDashUnlocked = true; //will change and logic for fragment amt will be in
+    public float dashSpeed;
+    private float dashTime;
+    public float startDashTime;
+    private int dir;
+
+    public upgradeSelection upgrades;
+    //
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        dashTime = startDashTime;
+
+        if (!isRight)
+        {
+            dir = 1;
+        }
+
+        else if (isRight)
+        {
+            dir = 2;
+        }
     }
 
     private void FixedUpdate()
@@ -55,6 +77,13 @@ public class player : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 1 * jumpForce);
             isGrounded = !isGrounded;
         }
+
+        if(upgrades.isActives[0] && isDashUnlocked)
+        {
+            dash();
+        }
+
+
     }
 
     void Flip()
@@ -68,6 +97,44 @@ public class player : MonoBehaviour
         if(collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
+        }
+    }
+
+    private void dash()
+    {
+        if (dir == 0)
+        {
+            if (!isRight && Input.GetKeyDown(KeyCode.X))
+            {
+                dir = 1;
+            }
+
+            else if (isRight && Input.GetKeyDown(KeyCode.X))
+            {
+                dir = 2;
+            }
+               
+        }
+
+        else
+        {
+            if (dashTime <= 0)
+            {
+                dir = 0;
+                dashTime = startDashTime;
+            }
+
+            else
+            {
+                dashTime -= Time.deltaTime;
+            }
+
+            if (dir == 1)
+                rb.AddForce(Vector2.left * dashSpeed);
+
+
+            else if (dir == 2)
+                rb.AddForce(Vector2.right * dashSpeed);
         }
     }
 }

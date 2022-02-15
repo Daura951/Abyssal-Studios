@@ -9,7 +9,7 @@ public class upgradeSelection : MonoBehaviour
     public Animator threeAnim;
     public Animator fourAnim;
 
-    private bool[] isActives = { true, false, false, false };
+    public bool[] isActives = { true, false, false, false };
     // Start is called before the first frame update
     void Start()
     {
