@@ -1347,7 +1347,7 @@ GameObject:
   - component: {fileID: 1302312344}
   - component: {fileID: 1302312343}
   m_Layer: 0
-  m_Name: partol
+  m_Name: patrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
