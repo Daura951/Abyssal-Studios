@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -94,10 +95,13 @@ public class player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
         }
+
+        else if (collision.gameObject.tag == "Death")
+            Application.LoadLevel(1);
     }
 
     private void dash()
@@ -137,4 +141,5 @@ public class player : MonoBehaviour
                 rb.AddForce(Vector2.right * dashSpeed);
         }
     }
+
 }
