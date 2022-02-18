@@ -29,7 +29,7 @@ public class player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        dashTime = startDashTime;
+
 
         if (!isRight)
         {
@@ -98,6 +98,7 @@ public class player : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
+            dashTime = startDashTime;
         }
 
         else if (collision.gameObject.tag == "Death")
@@ -125,7 +126,9 @@ public class player : MonoBehaviour
             if (dashTime <= 0)
             {
                 dir = 0;
-                dashTime = startDashTime;
+
+                if(isGrounded)
+                    dashTime = startDashTime;
             }
 
             else

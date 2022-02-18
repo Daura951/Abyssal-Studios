@@ -372,7 +372,7 @@ MonoBehaviour:
   jumpForce: 5
   bulletOrigin: {fileID: 795014334}
   bullet: {fileID: 5843903610828498900, guid: ed0d336f0f0c5ce49862b1cc0be20cd2, type: 3}
-  dashSpeed: 250
+  dashSpeed: 350
   startDashTime: 0.1
   upgrades: {fileID: 448826113}
 --- !u!114 &448826113
