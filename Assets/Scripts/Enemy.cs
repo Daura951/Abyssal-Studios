@@ -23,22 +23,24 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        cooldownTimer += Time.deltaTime;
 
-        if (PlayerInSight())
-        {
-            if (cooldownTimer >= attackCooldown)
+            cooldownTimer += Time.deltaTime;
+
+            if (PlayerInSight())
             {
-                cooldownTimer = 0;
-                anim.SetTrigger("Attack");
+                if (cooldownTimer >= attackCooldown)
+                {
+                    cooldownTimer = 0;
+                    anim.SetTrigger("Attack");
+                }
+
             }
 
-        }
+            else
+            {
+                anim.ResetTrigger("Attack");
+            }
 
-        else
-        {
-            anim.ResetTrigger("Attack");
-        }
 
     }
     

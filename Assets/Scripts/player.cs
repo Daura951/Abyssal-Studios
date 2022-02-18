@@ -15,6 +15,7 @@ public class player : MonoBehaviour
     public Transform bulletOrigin;
     public GameObject bullet;
 
+    //Hi, I'm invading your project! -Joseph Leung
     //for dash
     private bool isDashUnlocked = true; //will change and logic for fragment amt will be in
     public float dashSpeed;
@@ -101,8 +102,11 @@ public class player : MonoBehaviour
             dashTime = startDashTime;
         }
 
-        else if (collision.gameObject.tag == "Death")
-            Application.LoadLevel(1);
+
+        /* Replaced this with a Killplane script I thought it 
+        would be easier if we had to use it again. -V
+        else if (collision.gameObject.tag == "Death") { }
+            //Application.LoadLevel(1);*/
     }
 
     private void dash()

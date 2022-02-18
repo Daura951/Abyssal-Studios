@@ -9,11 +9,17 @@ public class Transport : MonoBehaviour
     [SerializeField] private int location;
 
     
+   void Update()
+    {
+
+    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(location);
         }
+        //Need to stop colliding with enemy -V
     }
 }

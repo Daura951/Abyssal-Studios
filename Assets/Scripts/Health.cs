@@ -23,7 +23,6 @@ public class Health : MonoBehaviour
         }
         else
         {
-            //Replace with player respawn later -V
             if (gameObject.tag == "Enemy")
             {
                 Destroy(transform.parent.gameObject);
