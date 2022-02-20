@@ -14,6 +14,7 @@ public class player : MonoBehaviour
     public float jumpForce;
     public Transform bulletOrigin;
     public GameObject bullet;
+    private float moveX;
 
     //Hi, I'm invading your project! -Joseph Leung
     //for dash
@@ -22,8 +23,21 @@ public class player : MonoBehaviour
     private float dashTime;
     public float startDashTime;
     private int dir;
+    //
 
+    //For Wall Jumping
+    private bool isWallJumpUnlocked;
+    private bool isTouchingFront;
+    public Transform frontCheck;
+    private bool wallSliding;
+    public float wallSlidingSpeed;
     public upgradeSelection upgrades;
+
+    private bool wallJumping;
+    public float XWallForce;
+    public float YWallForce;
+    public float wallJumpTime;
+
     //
 
     // Start is called before the first frame update
@@ -45,7 +59,7 @@ public class player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
+        moveX = Input.GetAxisRaw("Horizontal");
 
         if(isRight && moveX < 0)
         {
@@ -85,7 +99,11 @@ public class player : MonoBehaviour
             dash();
         }
 
-
+        if (upgrades.isActives[1] && isWallJumpUnlocked)
+        {
+            wallJump();
+        }
+       
     }
 
     void Flip()
@@ -96,12 +114,25 @@ public class player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGrounded = true;
-            dashTime = startDashTime;
-        }
 
+        switch(collision.gameObject.tag)
+        {
+            case "Ground":
+                isGrounded = true;
+                dashTime = startDashTime;
+                break;
+
+            case "Wall":
+                isTouchingFront = true;
+
+                if(upgrades.isActives[1])
+                    isGrounded = true;
+                break;
+
+            default:
+                break;
+
+        }
 
         /* Replaced this with a Killplane script I thought it 
         would be easier if we had to use it again. -V
@@ -149,4 +180,34 @@ public class player : MonoBehaviour
         }
     }
 
+
+    private void wallJump()
+    {
+        if (isTouchingFront && !isGrounded && moveX != 0)
+        {
+            wallSliding = true;
+        }
+        else wallSliding = false;
+
+        if(wallSliding)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space) && wallSliding)
+        {
+            wallJumping = true;
+            Invoke("SetWJumpToFalse", wallJumpTime);
+        }
+
+        if(wallJumping)
+        {
+            rb.velocity = new Vector2(XWallForce * -moveX, YWallForce);
+        }
+    }
+
+    private void setWJumpToFalse()
+    {
+        wallJumping = false;
+    }
 }
