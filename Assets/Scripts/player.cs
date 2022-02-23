@@ -14,11 +14,10 @@ public class player : MonoBehaviour
     public float jumpForce;
     public Transform bulletOrigin;
     public GameObject bullet;
-<<<<<<< Updated upstream
-=======
+
     private float moveX;
     public upgradeSelection upgrades;
->>>>>>> Stashed changes
+
 
     //Hi, I'm invading your project! -Joseph Leung
     //Hi Joseph!
@@ -30,9 +29,7 @@ public class player : MonoBehaviour
     public float startDashTime;
     private int dir;
 
-<<<<<<< Updated upstream
-    public upgradeSelection upgrades;
-=======
+
     //For Wall Jumping
     private bool isWallJumpUnlocked = true;
     private bool isTouchingFront;
@@ -51,7 +48,6 @@ public class player : MonoBehaviour
     public GameObject bomb;
     public Rigidbody2D bombRB;
     public float bombSpeed;
->>>>>>> Stashed changes
     //
 
     // Start is called before the first frame update
@@ -113,21 +109,9 @@ public class player : MonoBehaviour
             dash();
         }
 
-<<<<<<< Updated upstream
-
-=======
-        if (upgrades.isActives[1] && isWallJumpUnlocked)
-        {
-            wallJump();
-        }
-
         //print(upgrades.isActives[2] + " " + isBombUnlocked + " " + Input.GetKeyDown(KeyCode.X) + " " + !thrown);
         if(upgrades.isActives[2] && isBombUnlocked && Input.GetKeyDown(KeyCode.X) && !thrown)
         {
-            print("Thrown!");
-            var bombDir = new Vector3();
-            thrown = true;
-            bombDir = new Vector3(-1, 0, 0) + Vector3.up;
             GameObject bombInst = Instantiate(bomb, bulletOrigin.position, Quaternion.identity);
               if (isRight)
               {
@@ -136,7 +120,7 @@ public class player : MonoBehaviour
             else bombInst.GetComponent<Rigidbody2D>().velocity = new Vector2(5, -1);
         }
        
->>>>>>> Stashed changes
+
     }
 
     void Flip()
@@ -152,7 +136,10 @@ public class player : MonoBehaviour
             isGrounded = true;
             dashTime = startDashTime;
         }
-
+        if(collision.gameObject.tag=="Wall" && upgrades.isActives[1] && isWallJumpUnlocked)
+        {
+            isGrounded = true;
+        }
 
         /* Replaced this with a Killplane script I thought it 
         would be easier if we had to use it again. -V
@@ -200,34 +187,9 @@ public class player : MonoBehaviour
         }
     }
 
-<<<<<<< Updated upstream
-=======
-
-    private void wallJump()
-    {
-        if (isTouchingFront && !isGrounded && moveX != 0)
-        {
-            wallSliding = true;
-        }
-        else wallSliding = false;
-
-        
-    }
-
-    private void setWJumpToFalse()
-    {
-        wallJumping = false;
-    }
-
-
-    public bool getThrown()
-    {
-        return thrown;
-    }
 
     public void setThrown(bool newThrown)
     {
         thrown = newThrown;
     }
->>>>>>> Stashed changes
 }
