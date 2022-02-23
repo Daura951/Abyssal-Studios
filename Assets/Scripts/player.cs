@@ -118,6 +118,8 @@ public class player : MonoBehaviour
                 bombInst.GetComponent<Rigidbody2D>().velocity = new Vector2(5, -1);
               }
             else bombInst.GetComponent<Rigidbody2D>().velocity = new Vector2(5, -1);
+
+            thrown  = !thrown;
         }
        
 
