@@ -7,6 +7,13 @@ TagManager:
   - Ground
   - Enemy
   - Death
+<<<<<<< Updated upstream
+=======
+  - Wall
+  - Teleporters
+  - ExWall
+  - NWall
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

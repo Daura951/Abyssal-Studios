@@ -14,8 +14,15 @@ public class player : MonoBehaviour
     public float jumpForce;
     public Transform bulletOrigin;
     public GameObject bullet;
+<<<<<<< Updated upstream
+=======
+    private float moveX;
+    public upgradeSelection upgrades;
+>>>>>>> Stashed changes
 
     //Hi, I'm invading your project! -Joseph Leung
+    //Hi Joseph!
+
     //for dash
     private bool isDashUnlocked = true; //will change and logic for fragment amt will be in
     public float dashSpeed;
@@ -23,7 +30,28 @@ public class player : MonoBehaviour
     public float startDashTime;
     private int dir;
 
+<<<<<<< Updated upstream
     public upgradeSelection upgrades;
+=======
+    //For Wall Jumping
+    private bool isWallJumpUnlocked = true;
+    private bool isTouchingFront;
+    private bool wallSliding;
+    public float wallSlidingSpeed;
+
+    private bool wallJumping;
+    public float XWallForce;
+    public float YWallForce;
+    public float wallJumpTime;
+    //
+
+    //For Bomb
+    private bool isBombUnlocked = true;
+    private bool thrown = false;
+    public GameObject bomb;
+    public Rigidbody2D bombRB;
+    public float bombSpeed;
+>>>>>>> Stashed changes
     //
 
     // Start is called before the first frame update
@@ -85,7 +113,30 @@ public class player : MonoBehaviour
             dash();
         }
 
+<<<<<<< Updated upstream
 
+=======
+        if (upgrades.isActives[1] && isWallJumpUnlocked)
+        {
+            wallJump();
+        }
+
+        //print(upgrades.isActives[2] + " " + isBombUnlocked + " " + Input.GetKeyDown(KeyCode.X) + " " + !thrown);
+        if(upgrades.isActives[2] && isBombUnlocked && Input.GetKeyDown(KeyCode.X) && !thrown)
+        {
+            print("Thrown!");
+            var bombDir = new Vector3();
+            thrown = true;
+            bombDir = new Vector3(-1, 0, 0) + Vector3.up;
+            GameObject bombInst = Instantiate(bomb, bulletOrigin.position, Quaternion.identity);
+              if (isRight)
+              {
+                bombInst.GetComponent<Rigidbody2D>().velocity = new Vector2(5, -1);
+              }
+            else bombInst.GetComponent<Rigidbody2D>().velocity = new Vector2(5, -1);
+        }
+       
+>>>>>>> Stashed changes
     }
 
     void Flip()
@@ -149,4 +200,34 @@ public class player : MonoBehaviour
         }
     }
 
+<<<<<<< Updated upstream
+=======
+
+    private void wallJump()
+    {
+        if (isTouchingFront && !isGrounded && moveX != 0)
+        {
+            wallSliding = true;
+        }
+        else wallSliding = false;
+
+        
+    }
+
+    private void setWJumpToFalse()
+    {
+        wallJumping = false;
+    }
+
+
+    public bool getThrown()
+    {
+        return thrown;
+    }
+
+    public void setThrown(bool newThrown)
+    {
+        thrown = newThrown;
+    }
+>>>>>>> Stashed changes
 }

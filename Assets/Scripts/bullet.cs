@@ -23,7 +23,17 @@ public class bullet : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground")
         Destroy(this.gameObject);
-        if(collision.gameObject.tag == "Enemy")
+
+        else if (collision.gameObject.tag == "Wall")
+         Destroy(this.gameObject);
+
+        else if (collision.gameObject.tag == "EXWall")
+                Destroy(this.gameObject);
+
+        else if (collision.gameObject.tag == "NWall")
+            Destroy(this.gameObject);
+
+        if (collision.gameObject.tag == "Enemy")
         {
             Destroy(this.gameObject);
             collision.gameObject.GetComponent<Health>().TakeDamage(damage);

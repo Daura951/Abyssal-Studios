@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: d357de5f54b74e5428b8a141a272afe1
+<<<<<<< Updated upstream
+=======
+  - enabled: 1
+    path: Assets/Scenes/WallJumpTest.unity
+    guid: fcde5d5821c7a1544b2609facce40b0c
+  - enabled: 1
+    path: Assets/Scenes/Bomb.unity
+    guid: 2b0236088a9647141b809918ac629b4b
+>>>>>>> Stashed changes
   m_configObjects: {}
