@@ -360,9 +360,9 @@ GameObject:
   - component: {fileID: 408495185}
   - component: {fileID: 408495184}
   - component: {fileID: 408495183}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Transport
-  m_TagString: Untagged
+  m_TagString: Transport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

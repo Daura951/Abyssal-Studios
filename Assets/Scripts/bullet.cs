@@ -11,6 +11,8 @@ public class bullet : MonoBehaviour
     void Start()
     {
         damage = 1;
+        //Please no touchie the transport layer -V
+        Physics2D.IgnoreLayerCollision(6, 7, true);
     }
 
     // Update is called once per frame
@@ -19,10 +21,13 @@ public class bullet : MonoBehaviour
         
     }
 
+    
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ground")
         Destroy(this.gameObject);
+
 
         else if (collision.gameObject.tag == "Wall")
          Destroy(this.gameObject);
@@ -34,6 +39,9 @@ public class bullet : MonoBehaviour
             Destroy(this.gameObject);
 
         if (collision.gameObject.tag == "Enemy")
+
+        if(collision.gameObject.tag == "Enemy")
+
         {
             Destroy(this.gameObject);
             collision.gameObject.GetComponent<Health>().TakeDamage(damage);

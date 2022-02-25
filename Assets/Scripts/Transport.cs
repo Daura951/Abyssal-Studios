@@ -13,13 +13,20 @@ public class Transport : MonoBehaviour
     {
 
     }
-    
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(location);
         }
+
+
+        else if (collision.gameObject.tag != "Player")
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+
         //Need to stop colliding with enemy -V
     }
 }
