@@ -9,9 +9,18 @@ public class Health : MonoBehaviour
     private float currentHealth;
     private bool dead;
 
+    [SerializeField] private float iFrames;
+    [SerializeField] private int flash;
+    private SpriteRenderer sprites;
+
+    private Animator Anim;
+
     private void Awake()
     {
-        currentHealth = startHealth; 
+        currentHealth = startHealth;
+        Anim = GetComponent<Animator>();
+        sprites = GetComponent<SpriteRenderer>();
+
     }
 
     public void TakeDamage(float _damage)
@@ -19,7 +28,7 @@ public class Health : MonoBehaviour
         currentHealth =Mathf.Clamp(currentHealth -= _damage, 0, startHealth);
         if (currentHealth > 0)
         {
-
+            StartCoroutine(noTouchie());
         }
         else
         {
@@ -42,5 +51,19 @@ public class Health : MonoBehaviour
 
            
         }
+    }
+
+    private IEnumerator noTouchie()
+    {
+        Physics2D.IgnoreLayerCollision(3, 8, true);
+        for(int i=0; i < flash; i++)
+        {
+            sprites.color = new Color(1, 0, 0, 0.5f);
+            yield return new WaitForSeconds(iFrames / (flash * 2));
+            sprites.color = Color.white;
+            yield return new WaitForSeconds(iFrames / (flash * 2));
+        }
+        Physics2D.IgnoreLayerCollision(3, 8, false);
+
     }
 }
