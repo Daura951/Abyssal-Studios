@@ -48,13 +48,27 @@ public class player : MonoBehaviour
     public GameObject bomb;
     public Rigidbody2D bombRB;
     public float bombSpeed;
+
     //
+
+    //For graple
+    private bool isGrapleUnlocked = true;
+    public LineRenderer line;
+    private DistanceJoint2D joint;
+    private  Vector3 targetPos;
+    private RaycastHit2D hit;
+    public float distance = 10f;
+    public LayerMask mask;
+    public float step = 0.02f;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        joint = GetComponent<DistanceJoint2D>();
+        joint.enabled = false;
+        line.enabled = false;
 
         if (!isRight)
         {
@@ -70,6 +84,7 @@ public class player : MonoBehaviour
     private void FixedUpdate()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
+
 
         if(isRight && moveX < 0)
         {
@@ -120,6 +135,64 @@ public class player : MonoBehaviour
             else bombInst.GetComponent<Rigidbody2D>().velocity = new Vector2(-5, -1);
 
             thrown  = !thrown;
+        }
+
+        if(upgrades.isActives[3] && isGrapleUnlocked)
+        {
+
+            if (joint.distance > .5f)
+                joint.distance -= step;
+
+
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                targetPos.z = 0;
+
+                hit = Physics2D.Raycast(transform.position, targetPos - transform.position, distance, mask);
+
+                if (hit.collider != null && hit.collider.gameObject.GetComponent<Rigidbody2D>() != null)
+                {
+                    joint.enabled = true;
+   
+                    Vector2 connectPoint = hit.point - new Vector2(hit.collider.transform.position.x, hit.collider.transform.position.y);
+                    connectPoint.x = connectPoint.x / hit.collider.transform.localScale.x;
+                    connectPoint.y = connectPoint.y / hit.collider.transform.localScale.y;
+              
+                    joint.connectedAnchor = connectPoint;
+
+                    joint.connectedBody = hit.collider.gameObject.GetComponent<Rigidbody2D>();
+                
+                    joint.distance = Vector2.Distance(transform.position, hit.point);
+
+                    line.enabled = true;
+                
+
+                   
+                }
+            }
+
+            if(line.enabled)
+            {
+                line.SetPosition(0, transform.position);
+                line.SetPosition(1, hit.point);
+            }
+
+            if(joint.enabled)
+            line.SetPosition(1, joint.connectedBody.transform.TransformPoint(joint.connectedAnchor));
+
+            if (Input.GetKey(KeyCode.X))
+            {
+
+                line.SetPosition(0, transform.position);
+            }
+
+
+            if (Input.GetKeyUp(KeyCode.X))
+            {
+                joint.enabled = false;
+                line.enabled = false;
+            }
         }
        
 
