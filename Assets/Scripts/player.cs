@@ -60,6 +60,8 @@ public class player : MonoBehaviour
     public float distance = 10f;
     public LayerMask mask;
     public float step = 0.02f;
+    public bool isGrappling = false;
+    public Vector2 grapple;
 
 
     // Start is called before the first frame update
@@ -146,8 +148,9 @@ public class player : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.X))
             {
-                targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                targetPos = grapple;
                 targetPos.z = 0;
+                print(targetPos);
 
                 hit = Physics2D.Raycast(transform.position, targetPos - transform.position, distance, mask);
 
@@ -191,6 +194,8 @@ public class player : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.X))
             {
                 joint.enabled = false;
+                targetPos = new Vector3(0, 0, 0);
+                grapple = new Vector2(0, 0);
                 line.enabled = false;
             }
         }

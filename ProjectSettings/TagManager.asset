@@ -12,6 +12,8 @@ TagManager:
   - ExWall
   - NWall
   - Transport
+  - Grapple
+  - grapRad
   layers:
   - Default
   - TransparentFX
