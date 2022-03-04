@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0834aa2e0fa5c0f499653e7cb69af56d
+guid: 432a21367a481da47b3bb08d29d23d47
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -104,85 +104,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_0
+      name: MainCharacter_KneelingShoot_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
+        x: 14
+        y: 65
+        width: 32
+        height: 53
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6ec0afec2b735b49955b7bb97c33fe2
-      internalID: -887557610
+      spriteID: 2afb8334807691f40aadb969340783d2
+      internalID: 405457249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_1
+      name: MainCharacter_KneelingShoot_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
+        x: 79
+        y: 66
+        width: 38
+        height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf9c71a96275ff94cbe0bbac3f7b8a25
-      internalID: 685924182
+      spriteID: 3c5f6b78e937ca44fbaf0a71904cb392
+      internalID: 1961223899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_2
+      name: MainCharacter_KneelingShoot_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 14
+        y: 1
+        width: 32
+        height: 53
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d33cb649456c3e1449bb872699058cf8
-      internalID: -700234688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_3
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b9ff58bca2126c49ac2f4848a186d4f
-      internalID: -986865357
+      spriteID: 482f1b3e16a85bb4b895642effa20e54
+      internalID: -117547027
       vertices: []
       indices: 
       edges: []
@@ -198,10 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DeepCognition__MainCharacter_IDLE_0: -887557610
-      DeepCognition__MainCharacter_IDLE_2: -700234688
-      DeepCognition__MainCharacter_IDLE_3: -986865357
-      DeepCognition__MainCharacter_IDLE_1: 685924182
+      MainCharacter_KneelingShoot_0: 405457249
+      MainCharacter_KneelingShoot_1: 1961223899
+      MainCharacter_KneelingShoot_2: -117547027
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

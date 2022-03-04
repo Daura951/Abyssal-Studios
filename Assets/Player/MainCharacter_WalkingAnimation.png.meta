@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0834aa2e0fa5c0f499653e7cb69af56d
+guid: 37d21f6090a182c4fb7d701753d2ebae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_0
+      name: MainCharacter_WalkingAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ea74c1537a8e7429dbbac129a7f050
+      internalID: -1153314463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainCharacter_WalkingAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a8945065e614649bd0aa48670f70f2
+      internalID: 1407425604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainCharacter_WalkingAnimation_2
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6ec0afec2b735b49955b7bb97c33fe2
-      internalID: -887557610
+      spriteID: b3bf284049fcb994099383a47aac327a
+      internalID: 1773630932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_1
+      name: MainCharacter_WalkingAnimation_3
       rect:
         serializedVersion: 2
         x: 64
@@ -139,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf9c71a96275ff94cbe0bbac3f7b8a25
-      internalID: 685924182
+      spriteID: b2cc1fb9baafc9a47a2fe05bd6ceb012
+      internalID: -1359394918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_2
+      name: MainCharacter_WalkingAnimation_4
       rect:
         serializedVersion: 2
         x: 0
@@ -160,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d33cb649456c3e1449bb872699058cf8
-      internalID: -700234688
+      spriteID: 45414ae8ec32576409a5fe1a27b520a9
+      internalID: -165728232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_3
+      name: MainCharacter_WalkingAnimation_5
       rect:
         serializedVersion: 2
         x: 64
@@ -181,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b9ff58bca2126c49ac2f4848a186d4f
-      internalID: -986865357
+      spriteID: 2d80a29f690ee8640950d21db158d96b
+      internalID: -390472201
       vertices: []
       indices: 
       edges: []
@@ -198,10 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DeepCognition__MainCharacter_IDLE_0: -887557610
-      DeepCognition__MainCharacter_IDLE_2: -700234688
-      DeepCognition__MainCharacter_IDLE_3: -986865357
-      DeepCognition__MainCharacter_IDLE_1: 685924182
+      MainCharacter_WalkingAnimation_4: -165728232
+      MainCharacter_WalkingAnimation_0: -1153314463
+      MainCharacter_WalkingAnimation_2: 1773630932
+      MainCharacter_WalkingAnimation_3: -1359394918
+      MainCharacter_WalkingAnimation_5: -390472201
+      MainCharacter_WalkingAnimation_1: 1407425604
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

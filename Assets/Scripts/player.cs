@@ -50,10 +50,17 @@ public class player : MonoBehaviour
     public float bombSpeed;
     //
 
+    //For Animations 
+    private Animator plyanim;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        plyanim = GetComponent<Animator>();
 
 
         if (!isRight)
@@ -74,13 +81,16 @@ public class player : MonoBehaviour
         if(isRight && moveX < 0)
         {
             Flip();
+            //Add animation trigger here????-V
         }
         else if (!isRight && moveX > 0)
         {
             Flip();
+
         }
 
         rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
+        plyanim.SetBool("moving", moveX != 0);
     }
 
     // Update is called once per frame
@@ -121,7 +131,8 @@ public class player : MonoBehaviour
 
             thrown  = !thrown;
         }
-       
+
+      
 
     }
 
