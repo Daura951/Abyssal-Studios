@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 0834aa2e0fa5c0f499653e7cb69af56d
+guid: c40411678331b3d4ebf0975b6e1fd2ad
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -105432357501030998
-    second: DeepCognition__MainCharacter_IDLE_0
-  - first:
-      213: 803704943621647881
-    second: DeepCognition__MainCharacter_IDLE_1
-  - first:
-      213: -1822517678220827123
-    second: DeepCognition__MainCharacter_IDLE_2
-  - first:
-      213: 7980696171629015334
-    second: DeepCognition__MainCharacter_IDLE_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -59,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_0
+      name: Tileset_Floor_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 66
-        width: 23
-        height: 56
+        x: 1
+        y: 133
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aada15754dd698ef0800000000000000
-      internalID: -105432357501030998
+      spriteID: 5393f38b27f5ba14bb5407ed64a6c091
+      internalID: 909155050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_1
+      name: Tileset_Floor_1
       rect:
         serializedVersion: 2
-        x: 85
-        y: 66
-        width: 23
-        height: 54
+        x: 1
+        y: 67
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90e2bc45365572b00800000000000000
-      internalID: 803704943621647881
+      spriteID: 4914f72b93da96d47ac3f43c3768d31c
+      internalID: 910810325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_2
+      name: Tileset_Floor_2
       rect:
         serializedVersion: 2
-        x: 21
-        y: 2
-        width: 23
-        height: 52
+        x: 1
+        y: 1
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0627c8e3dd15b6e0800000000000000
-      internalID: -1822517678220827123
+      spriteID: 04375f2772b6029489d95c7fbcbaba6c
+      internalID: 1621280908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DeepCognition__MainCharacter_IDLE_3
+      name: Tileset_Floor_3
       rect:
         serializedVersion: 2
-        x: 85
-        y: 2
-        width: 23
-        height: 54
+        x: 67
+        y: 1
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +181,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 621744272e021ce60800000000000000
-      internalID: 7980696171629015334
+      spriteID: b22858689649f4645bc0a7e157eb1f85
+      internalID: 1319907978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Floor_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6dcecde683501f4e8b9ba1d7534bfd6
+      internalID: 13700680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Floor_5
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 67
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9adc246d23b834f81f4aa42dcb4fc7
+      internalID: 251616331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Floor_6
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 67
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b565dd2237cb0454594bb046b11ac338
+      internalID: 1758918222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Floor_7
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 133
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564cb08b33fefe7468566a7526d74b64
+      internalID: -564322146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Floor_8
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 133
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc914b04a938e845ac2abcbf47f1290
+      internalID: -921212497
       vertices: []
       indices: 
       edges: []
@@ -210,10 +303,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DeepCognition__MainCharacter_IDLE_0: -105432357501030998
-      DeepCognition__MainCharacter_IDLE_2: -1822517678220827123
-      DeepCognition__MainCharacter_IDLE_3: 7980696171629015334
-      DeepCognition__MainCharacter_IDLE_1: 803704943621647881
+      Tileset_Floor_5: 251616331
+      Tileset_Floor_6: 1758918222
+      Tileset_Floor_4: 13700680
+      Tileset_Floor_0: 909155050
+      Tileset_Floor_1: 910810325
+      Tileset_Floor_8: -921212497
+      Tileset_Floor_2: 1621280908
+      Tileset_Floor_3: 1319907978
+      Tileset_Floor_7: -564322146
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
