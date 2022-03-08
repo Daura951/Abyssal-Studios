@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bomb.unity
     guid: 2b0236088a9647141b809918ac629b4b
+  - enabled: 1
+    path: Assets/Scenes/FragTest.unity
+    guid: 178e053ac197d61419e1f14db2c9a4cc
   m_configObjects: {}

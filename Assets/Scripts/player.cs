@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
+    
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool isRight = true;

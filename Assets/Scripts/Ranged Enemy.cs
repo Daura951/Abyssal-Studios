@@ -50,7 +50,7 @@ public class RangedEnemy : MonoBehaviour
     {
         cooldownTimer = 0;
         shot[0].transform.position = shotPoint.position;
-        shot[0].GetComponent<l>
+       // shot[0].GetComponent<l>
     }
 
     private bool PlayerInSight()
