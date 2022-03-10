@@ -912,7 +912,15 @@ MonoBehaviour:
   bomb: {fileID: 8915476012019177786, guid: c5d7c4ff5c32ad14698680432fdcbb92, type: 3}
   bombRB: {fileID: 0}
   bombSpeed: 0
-  FragUI: {fileID: 0}
+  line: {fileID: 0}
+  distance: 10
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  step: 0.02
+  isGrappling: 0
+  grapple: {x: 0, y: 0}
+  FragUI: {fileID: 1926540271}
 --- !u!114 &448826113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,7 +1002,7 @@ SpriteRenderer:
   m_Size: {x: 0.72990733, y: 0.6769914}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!95 &448826116
