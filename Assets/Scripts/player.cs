@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
-
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool isRight = true;
@@ -49,12 +48,23 @@ public class player : MonoBehaviour
     public GameObject bomb;
     public Rigidbody2D bombRB;
     public float bombSpeed;
+
     //
 
-    //For Animations 
-    private Animator plyanim;
+    //For graple
+    private bool isGrapleUnlocked = true;
+    public LineRenderer line;
+    private DistanceJoint2D joint;
+    private Vector3 targetPos;
+    private RaycastHit2D hit;
+    public float distance = 10f;
+    public LayerMask mask;
+    public float step = 0.02f;
+    public bool isGrappling = false;
+    public Vector2 grapple;
 
-    //Looking at Fragments -V
+
+    //Fragments -V
     public GameObject FragUI;
     public static GameObject Alpha;
     public static GameObject Bravo;
@@ -77,7 +87,19 @@ public class player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        plyanim = GetComponent<Animator>();
+        joint = GetComponent<DistanceJoint2D>();
+        joint.enabled = false;
+        line.enabled = false;
+
+        if (!isRight)
+        {
+            dir = 1;
+        }
+
+        else if (isRight)
+        {
+            dir = 2;
+        }
 
         FragUI = GameObject.FindWithTag("Fragment");
         Alpha = FragUI.transform.GetChild(12).gameObject;
@@ -105,39 +127,23 @@ public class player : MonoBehaviour
         Lima = FragUI.transform.GetChild(1).gameObject;
         Lima.SetActive(false);
 
-
-
-        if (!isRight)
-        {
-            dir = 1;
-        }
-
-        else if (isRight)
-        {
-            dir = 2;
-        }
     }
 
     private void FixedUpdate()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
 
+
         if (isRight && moveX < 0)
         {
             Flip();
-            //Add animation trigger here????-V
         }
         else if (!isRight && moveX > 0)
         {
             Flip();
-
         }
 
         rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
-        plyanim.SetBool("moving", moveX != 0);
-
-
-
     }
 
     // Update is called once per frame
@@ -177,6 +183,67 @@ public class player : MonoBehaviour
             else bombInst.GetComponent<Rigidbody2D>().velocity = new Vector2(-5, -1);
 
             thrown = !thrown;
+        }
+
+        if (upgrades.isActives[3] && isGrapleUnlocked)
+        {
+
+            if (joint.distance > .5f)
+                joint.distance -= step;
+
+
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                targetPos = grapple;
+                targetPos.z = 0;
+                print(targetPos);
+
+                hit = Physics2D.Raycast(transform.position, targetPos - transform.position, distance, mask);
+
+                if (hit.collider != null && hit.collider.gameObject.GetComponent<Rigidbody2D>() != null)
+                {
+                    joint.enabled = true;
+
+                    Vector2 connectPoint = hit.point - new Vector2(hit.collider.transform.position.x, hit.collider.transform.position.y);
+                    connectPoint.x = connectPoint.x / hit.collider.transform.localScale.x;
+                    connectPoint.y = connectPoint.y / hit.collider.transform.localScale.y;
+
+                    joint.connectedAnchor = connectPoint;
+
+                    joint.connectedBody = hit.collider.gameObject.GetComponent<Rigidbody2D>();
+
+                    joint.distance = Vector2.Distance(transform.position, hit.point);
+
+                    line.enabled = true;
+
+
+
+                }
+            }
+
+            if (line.enabled)
+            {
+                line.SetPosition(0, transform.position);
+                line.SetPosition(1, hit.point);
+            }
+
+            if (joint.enabled)
+                line.SetPosition(1, joint.connectedBody.transform.TransformPoint(joint.connectedAnchor));
+
+            if (Input.GetKey(KeyCode.X))
+            {
+
+                line.SetPosition(0, transform.position);
+            }
+
+
+            if (Input.GetKeyUp(KeyCode.X))
+            {
+                joint.enabled = false;
+                targetPos = new Vector3(0, 0, 0);
+                grapple = new Vector2(0, 0);
+                line.enabled = false;
+            }
         }
 
         //To look at the collected fragments -V
@@ -253,9 +320,7 @@ public class player : MonoBehaviour
             else if (dir == 2)
                 rb.AddForce(Vector2.right * dashSpeed);
         }
-
     }
-
 
 
     public void setThrown(bool newThrown)
@@ -263,5 +328,3 @@ public class player : MonoBehaviour
         thrown = newThrown;
     }
 }
-
-
