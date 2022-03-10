@@ -8,9 +8,11 @@ public class Bomb : MonoBehaviour
 
     public float detonationTime;
     public player pylr;
+    private AudioSource bombSource;
     void Start()
     {
         pylr = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<player>();
+        bombSource = GameObject.FindGameObjectWithTag("BombSFX").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class Bomb : MonoBehaviour
         {
             Destroy(this.gameObject);
             pylr.setThrown(false);
+            bombSource.Play();
         }
     }
 
@@ -34,6 +37,7 @@ public class Bomb : MonoBehaviour
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
             pylr.setThrown(false);
+            bombSource.Play();
         }
     }
 }

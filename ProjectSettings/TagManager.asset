@@ -13,6 +13,9 @@ TagManager:
   - NWall
   - Transport
   - Fragment
+  - Grapple
+  - grapRad
+  - BombSFX
   layers:
   - Default
   - TransparentFX
@@ -25,7 +28,7 @@ TagManager:
   - Enemy
   - Transport
   - Fragments
-  - 
+  - Grapple
   - 
   - 
   - 

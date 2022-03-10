@@ -9,12 +9,20 @@ public class player : MonoBehaviour
     private bool isGrounded;
     private bool isRight = true;
 
+
+    //SFX stuff
+    public AudioSource walkingSource;
+    public AudioSource jumpingSource;
+    public AudioSource shootingSource;
+    public AudioSource grappleSource;
+    //
+
     //general Player movement
     public float speed;
     public float jumpForce;
     public Transform bulletOrigin;
     public GameObject bullet;
-
+    private bool isMoving;
     private float moveX;
     public upgradeSelection upgrades;
 
@@ -32,8 +40,6 @@ public class player : MonoBehaviour
 
     //For Wall Jumping
     private bool isWallJumpUnlocked = true;
-    private bool isTouchingFront;
-    private bool wallSliding;
     public float wallSlidingSpeed;
 
     private bool wallJumping;
@@ -132,16 +138,19 @@ public class player : MonoBehaviour
     private void FixedUpdate()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
-
+        
 
         if (isRight && moveX < 0)
         {
             Flip();
+            bulletOrigin.position = new Vector3(bulletOrigin.position.x, bulletOrigin.position.y, 1);
         }
         else if (!isRight && moveX > 0)
         {
             Flip();
+            bulletOrigin.position = new Vector3(bulletOrigin.position.x, bulletOrigin.position.y, 1);
         }
+        
 
         rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
     }
@@ -158,13 +167,39 @@ public class player : MonoBehaviour
                 bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
             }
             else bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(-10, 0);
+
+            if(!shootingSource.isPlaying)
+            {
+                shootingSource.Play();
+            }
         }
+
+        if (rb.velocity.x != 0)
+        {
+            isMoving = true;
+        }
+        else isMoving = false;
+
+        if (isMoving && isGrounded && !isGrappling)
+        {
+            if (!walkingSource.isPlaying)
+            {
+                walkingSource.Play();
+            }
+        }
+        else walkingSource.Stop();
 
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, 1 * jumpForce);
             isGrounded = !isGrounded;
+            if (!jumpingSource.isPlaying)
+            {
+                print("owo");
+                jumpingSource.Play();
+            }
+
         }
 
         if (upgrades.isActives[0] && isDashUnlocked)
@@ -203,7 +238,11 @@ public class player : MonoBehaviour
                 if (hit.collider != null && hit.collider.gameObject.GetComponent<Rigidbody2D>() != null)
                 {
                     joint.enabled = true;
-
+                    if(!grappleSource.isPlaying)
+                    {
+                        grappleSource.Play();
+                    }
+                    isGrappling = true;
                     Vector2 connectPoint = hit.point - new Vector2(hit.collider.transform.position.x, hit.collider.transform.position.y);
                     connectPoint.x = connectPoint.x / hit.collider.transform.localScale.x;
                     connectPoint.y = connectPoint.y / hit.collider.transform.localScale.y;
@@ -232,7 +271,6 @@ public class player : MonoBehaviour
 
             if (Input.GetKey(KeyCode.X))
             {
-
                 line.SetPosition(0, transform.position);
             }
 
@@ -243,6 +281,8 @@ public class player : MonoBehaviour
                 targetPos = new Vector3(0, 0, 0);
                 grapple = new Vector2(0, 0);
                 line.enabled = false;
+                isGrappling = false;
+                
             }
         }
 
