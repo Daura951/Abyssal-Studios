@@ -6,16 +6,12 @@ public class Fragment : MonoBehaviour
 {
     [SerializeField] private int Frag;
     private int collect;
+    public GameObject FragUI;
+
 
 
     void Start()
     {
-        
-       /* collect = GameObject.FindWithTag("player").GetComponent<Fraglog>().CheckFrag(Frag);
-        if(collect > 0)
-        {
-            Destroy(this.gameObject);
-        }*/ 
 
     }
     
@@ -36,6 +32,8 @@ public class Fragment : MonoBehaviour
         {
             Destroy(this.gameObject);
             collision.gameObject.GetComponent<Fraglog>().UpdateFrag(Frag);
+
+            
         }
 
 

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
-    
+
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool isRight = true;
@@ -54,6 +54,22 @@ public class player : MonoBehaviour
     //For Animations 
     private Animator plyanim;
 
+    //Looking at Fragments -V
+    public GameObject FragUI;
+    public static GameObject Alpha;
+    public static GameObject Bravo;
+    public static GameObject Charlie;
+    public static GameObject Delta;
+    public static GameObject Echo;
+    public static GameObject Foxtrot;
+    public static GameObject Gamma;
+    public static GameObject Hotel;
+    public static GameObject India;
+    public static GameObject Juliet;
+    public static GameObject Kilo;
+    public static GameObject Lima;
+    private int totalFrags;
+
 
 
 
@@ -62,6 +78,33 @@ public class player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         plyanim = GetComponent<Animator>();
+
+        FragUI = GameObject.FindWithTag("Fragment");
+        Alpha = FragUI.transform.GetChild(12).gameObject;
+        Alpha.SetActive(false);
+        Bravo = FragUI.transform.GetChild(2).gameObject;
+        Bravo.SetActive(false);
+        Charlie = FragUI.transform.GetChild(3).gameObject;
+        Charlie.SetActive(false);
+        Delta = FragUI.transform.GetChild(4).gameObject;
+        Delta.SetActive(false);
+        Echo = FragUI.transform.GetChild(5).gameObject;
+        Echo.SetActive(false);
+        Foxtrot = FragUI.transform.GetChild(6).gameObject;
+        Foxtrot.SetActive(false);
+        Gamma = FragUI.transform.GetChild(7).gameObject;
+        Gamma.SetActive(false);
+        Hotel = FragUI.transform.GetChild(8).gameObject;
+        Hotel.SetActive(false);
+        India = FragUI.transform.GetChild(9).gameObject;
+        India.SetActive(false);
+        Juliet = FragUI.transform.GetChild(10).gameObject;
+        Juliet.SetActive(false);
+        Kilo = FragUI.transform.GetChild(11).gameObject;
+        Kilo.SetActive(false);
+        Lima = FragUI.transform.GetChild(1).gameObject;
+        Lima.SetActive(false);
+
 
 
         if (!isRight)
@@ -79,7 +122,7 @@ public class player : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal");
 
-        if(isRight && moveX < 0)
+        if (isRight && moveX < 0)
         {
             Flip();
             //Add animation trigger here????-V
@@ -92,6 +135,9 @@ public class player : MonoBehaviour
 
         rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
         plyanim.SetBool("moving", moveX != 0);
+
+
+
     }
 
     // Update is called once per frame
@@ -115,25 +161,33 @@ public class player : MonoBehaviour
             isGrounded = !isGrounded;
         }
 
-        if(upgrades.isActives[0] && isDashUnlocked)
+        if (upgrades.isActives[0] && isDashUnlocked)
         {
             dash();
         }
 
         //print(upgrades.isActives[2] + " " + isBombUnlocked + " " + Input.GetKeyDown(KeyCode.X) + " " + !thrown);
-        if(upgrades.isActives[2] && isBombUnlocked && Input.GetKeyDown(KeyCode.X) && !thrown)
+        if (upgrades.isActives[2] && isBombUnlocked && Input.GetKeyDown(KeyCode.X) && !thrown)
         {
             GameObject bombInst = Instantiate(bomb, bulletOrigin.position, Quaternion.identity);
-              if (isRight)
-              {
+            if (isRight)
+            {
                 bombInst.GetComponent<Rigidbody2D>().velocity = new Vector2(5, -1);
-              }
+            }
             else bombInst.GetComponent<Rigidbody2D>().velocity = new Vector2(-5, -1);
 
-            thrown  = !thrown;
+            thrown = !thrown;
         }
 
-      
+        //To look at the collected fragments -V
+        if (Input.GetKey(KeyCode.F))
+        {
+            FragUI.SetActive(true);
+        }
+        else
+        {
+            FragUI.SetActive(false);
+        }
 
     }
 
@@ -150,7 +204,7 @@ public class player : MonoBehaviour
             isGrounded = true;
             dashTime = startDashTime;
         }
-        if(collision.gameObject.tag=="Wall" && upgrades.isActives[1] && isWallJumpUnlocked)
+        if (collision.gameObject.tag == "Wall" && upgrades.isActives[1] && isWallJumpUnlocked)
         {
             isGrounded = true;
         }
@@ -174,7 +228,7 @@ public class player : MonoBehaviour
             {
                 dir = 2;
             }
-               
+
         }
 
         else
@@ -183,7 +237,7 @@ public class player : MonoBehaviour
             {
                 dir = 0;
 
-                if(isGrounded)
+                if (isGrounded)
                     dashTime = startDashTime;
             }
 
@@ -199,7 +253,9 @@ public class player : MonoBehaviour
             else if (dir == 2)
                 rb.AddForce(Vector2.right * dashSpeed);
         }
+
     }
+
 
 
     public void setThrown(bool newThrown)
@@ -207,3 +263,5 @@ public class player : MonoBehaviour
         thrown = newThrown;
     }
 }
+
+
