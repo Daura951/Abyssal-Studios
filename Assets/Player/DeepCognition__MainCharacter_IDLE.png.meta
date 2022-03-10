@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 0834aa2e0fa5c0f499653e7cb69af56d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -105432357501030998
+    second: DeepCognition__MainCharacter_IDLE_0
+  - first:
+      213: 803704943621647881
+    second: DeepCognition__MainCharacter_IDLE_1
+  - first:
+      213: -1822517678220827123
+    second: DeepCognition__MainCharacter_IDLE_2
+  - first:
+      213: 7980696171629015334
+    second: DeepCognition__MainCharacter_IDLE_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -24,7 +36,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -33,7 +44,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +80,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,14 +123,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6ec0afec2b735b49955b7bb97c33fe2
-      internalID: -887557610
+      spriteID: aada15754dd698ef0800000000000000
+      internalID: -105432357501030998
       vertices: []
       indices: 
       edges: []
@@ -133,14 +144,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf9c71a96275ff94cbe0bbac3f7b8a25
-      internalID: 685924182
+      spriteID: 90e2bc45365572b00800000000000000
+      internalID: 803704943621647881
       vertices: []
       indices: 
       edges: []
@@ -154,14 +165,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d33cb649456c3e1449bb872699058cf8
-      internalID: -700234688
+      spriteID: d0627c8e3dd15b6e0800000000000000
+      internalID: -1822517678220827123
       vertices: []
       indices: 
       edges: []
@@ -175,14 +186,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b9ff58bca2126c49ac2f4848a186d4f
-      internalID: -986865357
+      spriteID: 621744272e021ce60800000000000000
+      internalID: 7980696171629015334
       vertices: []
       indices: 
       edges: []
@@ -197,11 +208,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      DeepCognition__MainCharacter_IDLE_0: -887557610
-      DeepCognition__MainCharacter_IDLE_2: -700234688
-      DeepCognition__MainCharacter_IDLE_3: -986865357
-      DeepCognition__MainCharacter_IDLE_1: 685924182
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
