@@ -12,8 +12,7 @@ TagManager:
   - ExWall
   - NWall
   - Transport
-  - Grapple
-  - grapRad
+  - Fragment
   layers:
   - Default
   - TransparentFX
@@ -25,7 +24,7 @@ TagManager:
   - teleporter
   - Enemy
   - Transport
-  - Graple
+  - Fragments
   - 
   - 
   - 
