@@ -16,6 +16,10 @@ TagManager:
   - Grapple
   - grapRad
   - BombSFX
+  - DBOX
+  - NPC
+  - NField
+  - DField
   layers:
   - Default
   - TransparentFX
@@ -29,7 +33,7 @@ TagManager:
   - Transport
   - Fragments
   - Grapple
-  - 
+  - NPC
   - 
   - 
   - 
