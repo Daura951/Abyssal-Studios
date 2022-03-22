@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3849238320113063470}
   - component: {fileID: 3849238320113063457}
   - component: {fileID: 3849238320113063458}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: GrapleObj
   m_TagString: Grapple
   m_Icon: {fileID: 0}
