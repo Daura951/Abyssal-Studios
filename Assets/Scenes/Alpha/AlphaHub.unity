@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &11706064 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2183659295797922576, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+  m_PrefabInstance: {fileID: 1402732649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &79668429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,8 +136,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 865479628357906666, guid: 0d41523cc682e6a4fa8ed496ef71a6df, type: 3}
+      propertyPath: grappleSource
+      value: 
+      objectReference: {fileID: 702948807}
+    - target: {fileID: 865479628357906666, guid: 0d41523cc682e6a4fa8ed496ef71a6df, type: 3}
+      propertyPath: jumpingSource
+      value: 
+      objectReference: {fileID: 11706064}
+    - target: {fileID: 865479628357906666, guid: 0d41523cc682e6a4fa8ed496ef71a6df, type: 3}
       propertyPath: walkingSource
       value: 
+      objectReference: {fileID: 1879789191}
+    - target: {fileID: 865479628357906666, guid: 0d41523cc682e6a4fa8ed496ef71a6df, type: 3}
+      propertyPath: shootingSource
+      value: 
+      objectReference: {fileID: 449509338}
+    - target: {fileID: 1762674360309425094, guid: 0d41523cc682e6a4fa8ed496ef71a6df, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2534099833470001667, guid: 0d41523cc682e6a4fa8ed496ef71a6df, type: 3}
       propertyPath: m_Name
@@ -298,6 +319,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 190ef5d031315324b9002076cf593c54, type: 3}
+--- !u!82 &449509338 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2183659295218394562, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+  m_PrefabInstance: {fileID: 1402732649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &468760436
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +408,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &702948807 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2183659295101752753, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+  m_PrefabInstance: {fileID: 1402732649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1161450925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -439,6 +470,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 190ef5d031315324b9002076cf593c54, type: 3}
+--- !u!1001 &1402732649
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2183659294928855928, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183659294928855928, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.8785465
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183659294928855928, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.74344075
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183659294928855928, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4818137
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183659294928855928, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183659294928855928, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183659294928855928, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183659294928855928, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183659294928855928, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183659294928855928, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183659294928855928, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183659294928855929, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+      propertyPath: m_Name
+      value: SFX manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+--- !u!82 &1879789191 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2183659295546282882, guid: aa439c6c267f4d0458d6bd07b082650a, type: 3}
+  m_PrefabInstance: {fileID: 1402732649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1898913996
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +543,7 @@ GameObject:
   - component: {fileID: 1898913997}
   - component: {fileID: 1898913999}
   - component: {fileID: 1898913998}
+  - component: {fileID: 1898914000}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -1381,6 +1475,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1898914000
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898913996}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: aeaf16984ad81be4bb0f799627726f25, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1990850945
 GameObject:
   m_ObjectHideFlags: 0
