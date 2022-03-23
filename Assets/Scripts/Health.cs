@@ -32,9 +32,9 @@ public class Health : MonoBehaviour
         }
         else
         {
-            if (gameObject.tag == "Enemy")
+            if (gameObject.tag == "Enemy" || gameObject.tag == "Boss")
             {
-                Destroy(gameObject); //transform.parent.
+                Destroy(gameObject); 
             }
             else
             {
@@ -56,7 +56,8 @@ public class Health : MonoBehaviour
     private IEnumerator noTouchie()
     {
         Physics2D.IgnoreLayerCollision(3, 8, true);
-        for(int i=0; i < flash; i++)
+        Physics2D.IgnoreLayerCollision(3, 13, true);
+        for (int i=0; i < flash; i++)
         {
             sprites.color = new Color(1, 0, 0, 0.5f);
             yield return new WaitForSeconds(iFrames / (flash * 2));
@@ -64,6 +65,7 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(iFrames / (flash * 2));
         }
         Physics2D.IgnoreLayerCollision(3, 8, false);
+        Physics2D.IgnoreLayerCollision(3, 13, false);
 
     }
 }
