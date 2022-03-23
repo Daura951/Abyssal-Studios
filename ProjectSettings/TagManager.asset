@@ -20,6 +20,10 @@ TagManager:
   - NPC
   - NField
   - DField
+  - WalkSFX
+  - JumpSFX
+  - GrappleSFX
+  - ShootSFX
   layers:
   - Default
   - TransparentFX

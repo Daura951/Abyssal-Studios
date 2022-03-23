@@ -43,6 +43,14 @@ public class DialogueParser : MonoBehaviour
             lineIndex++;
             isFinished = false;
         }
+
+        if(isEnd)
+        {
+            isInteracted = false;
+            isEnd = false;
+            lineIndex = 0;
+            isFinished = !isFinished;
+        }
     }
 
     void parse()
