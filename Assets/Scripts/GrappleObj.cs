@@ -18,7 +18,7 @@ public class GrappleObj : MonoBehaviour
         
     }
 
-    public void  OnTriggerEnter2D(Collider2D col)
+    public void  OnTriggerStay2D(Collider2D col)
     {
         if(col.gameObject.tag == "grapRad")
         {

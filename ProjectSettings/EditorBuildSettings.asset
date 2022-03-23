@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FragTest.unity
     guid: 178e053ac197d61419e1f14db2c9a4cc
+  - enabled: 1
+    path: Assets/Scenes/Alpha/AlphaHub.unity
+    guid: 077b44097dd1e9b478e4ca75ceb8f942
+  - enabled: 1
+    path: Assets/Scenes/Alpha/AlphaWorld1.unity
+    guid: 605db0edd69424d4faef2146a0bddc4e
+  - enabled: 1
+    path: Assets/Scenes/Alpha/AlphaWorld2.unity
+    guid: b51ea52a91cf34d4f90c22aa0fa49ccd
   m_configObjects: {}

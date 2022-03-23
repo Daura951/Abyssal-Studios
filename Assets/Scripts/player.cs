@@ -304,7 +304,7 @@ public class player : MonoBehaviour
         this.transform.Rotate(0, 180, 0);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
@@ -323,6 +323,14 @@ public class player : MonoBehaviour
         would be easier if we had to use it again. -V
         else if (collision.gameObject.tag == "Death") { }
             //Application.LoadLevel(1);*/
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

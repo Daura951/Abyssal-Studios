@@ -382,7 +382,7 @@ MonoBehaviour:
   bombRB: {fileID: 5589305422743679187, guid: c5d7c4ff5c32ad14698680432fdcbb92, type: 3}
   bombSpeed: 0
   line: {fileID: 5277428666932411107}
-  distance: 3
+  distance: 7
   mask:
     serializedVersion: 2
     m_Bits: 1024
