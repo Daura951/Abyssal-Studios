@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
         {
             if (gameObject.tag == "Enemy")
             {
-                Destroy(transform.parent.gameObject);
+                Destroy(gameObject); //transform.parent.
             }
             else
             {
