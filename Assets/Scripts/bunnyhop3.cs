@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bunnyhop : StateMachineBehaviour
+public class bunnyhop3 : StateMachineBehaviour
 {
 
-    
+
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -15,7 +15,7 @@ public class bunnyhop : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       // animator.GetComponent<Boss1>().LittleLeap();
+        animator.GetComponent<Boss1>().LittleLeapPart3();
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -23,5 +23,5 @@ public class bunnyhop : StateMachineBehaviour
     {
 
     }
-    
+
 }

@@ -152,7 +152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2534099833470001667, guid: 0d41523cc682e6a4fa8ed496ef71a6df, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696169393139796192, guid: 0d41523cc682e6a4fa8ed496ef71a6df, type: 3}
+      propertyPath: startHealth
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7767937530066910790, guid: 0d41523cc682e6a4fa8ed496ef71a6df, type: 3}
       propertyPath: m_Size.x
@@ -763,10 +767,10 @@ MonoBehaviour:
   vertSpeed: 50
   horSpeed: 10
   bigLeapCD: 15
-  leftMinor: {fileID: 2054258764}
-  rightMinor: {fileID: 478738038}
+  leftMinor: {fileID: 478738038}
+  rightMinor: {fileID: 2054258764}
   hopCD: 3
-  verthop: 0
+  verthop: 8.6
   stinger: {fileID: 396633257}
   shot: {fileID: 7583070926664496971, guid: c0b185f3a6157824b9c9cab9a7fd581e, type: 3}
   shotCooldown: 0
@@ -850,7 +854,7 @@ GameObject:
   m_Layer: 0
   m_Name: midright
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

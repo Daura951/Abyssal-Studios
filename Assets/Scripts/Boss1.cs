@@ -17,13 +17,12 @@ public class Boss1 : MonoBehaviour
     private Vector3 initialDirection;
     private bool rightSide;
     private float bigLeapAva;
-    private bool attacking;
 
     //Small jump attack -V
     [SerializeField] private Transform leftMinor;
     [SerializeField] private Transform rightMinor;
     [SerializeField] private float hopCD;
-    [SerializeField] private int verthop;
+    [SerializeField] private float verthop;
     private float hopAva;
 
     //Shooting and the such -V
@@ -43,10 +42,6 @@ public class Boss1 : MonoBehaviour
         initialDirection = this.transform.localScale;
         rightSide = true;
         anim = GetComponent<Animator>();
-        attacking = false;
-        
-        
-
     }
 
     private void Update()
@@ -94,7 +89,6 @@ public class Boss1 : MonoBehaviour
 
     public void BigLeap()
     {
-        attacking = true;
 
         if (rightSide)
         {
@@ -111,7 +105,6 @@ public class Boss1 : MonoBehaviour
                 this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * -1, initialDirection.y, initialDirection.z);
                 this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + Time.deltaTime, this.transform.position.z);
                 rightSide = false;
-                attacking = false;
                 anim.ResetTrigger("BigLeap");
                 bigLeapAva = 0;
                 anim.SetTrigger("finished");
@@ -144,6 +137,111 @@ public class Boss1 : MonoBehaviour
         }
         
     }
+
+    public void LittleLeapPart1()
+    {
+        if (rightSide)
+        {
+
+            if (this.transform.position.x > rightMinor.position.x)
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * -1 * horSpeed, this.transform.position.y + Time.deltaTime * verthop, this.transform.position.z);
+            }
+            else
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(rightMinor.position.x, this.transform.position.y + Time.deltaTime, this.transform.position.z);
+                anim.SetTrigger("hop");
+            }
+        }
+
+        else
+        {
+            if (this.transform.position.x < leftMinor.position.x)
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * -1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * 1 * horSpeed, this.transform.position.y + Time.deltaTime * verthop, this.transform.position.z);
+            }
+            else
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * -1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(leftMinor.position.x, this.transform.position.y + Time.deltaTime, this.transform.position.z);
+                anim.SetTrigger("hop");
+            }
+        }
+    }
+    public void LittleLeapPart2()
+    {
+        anim.ResetTrigger("hop");
+        if (rightSide)
+        {
+
+            if (this.transform.position.x > leftMinor.position.x)
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * -1 * horSpeed, this.transform.position.y + Time.deltaTime * verthop, this.transform.position.z);
+            }
+            else
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(leftMinor.position.x, this.transform.position.y + Time.deltaTime, this.transform.position.z);
+                anim.SetTrigger("hop");
+            }
+        }
+
+        else
+        {
+            if (this.transform.position.x < rightMinor.position.x)
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * -1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * 1 * horSpeed, this.transform.position.y + Time.deltaTime * verthop, this.transform.position.z);
+            }
+            else
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * -1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(rightMinor.position.x, this.transform.position.y + Time.deltaTime, this.transform.position.z);
+                anim.SetTrigger("hop");
+            }
+        }
+    }
+    public void LittleLeapPart3()
+    {
+        anim.ResetTrigger("hop");
+        if (rightSide)
+        {
+
+            if (this.transform.position.x > leftBound.position.x)
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * -1 * horSpeed, this.transform.position.y + Time.deltaTime * verthop, this.transform.position.z);
+            }
+            else
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * -1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(leftBound.position.x, this.transform.position.y + Time.deltaTime, this.transform.position.z);
+                anim.SetTrigger("hop");
+
+            }
+        }
+
+        else
+        {
+            if (this.transform.position.x < rightBound.position.x)
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * -1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * 1 * horSpeed, this.transform.position.y + Time.deltaTime * verthop, this.transform.position.z);
+            }
+            else
+            {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(rightBound.position.x, this.transform.position.y + Time.deltaTime, this.transform.position.z);
+                anim.SetTrigger("hop");
+            }
+        }
+    }
+
+
     /* Ignore this she doesn't wanna work rn - V
     public void LittleLeap()
     {
@@ -152,23 +250,19 @@ public class Boss1 : MonoBehaviour
 
             if (this.transform.position.x > rightMinor.position.x)
             {
-
                 this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
-
                 this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * -1 * horSpeed, this.transform.position.y + Time.deltaTime * verthop, this.transform.position.z);
-            
             }
-            else
+            else 
             {
+                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * -1, initialDirection.y, initialDirection.z);
+                this.transform.position = new Vector3(rightMinor.position.x, this.transform.position.y + Time.deltaTime, this.transform.position.z);
                 anim.SetTrigger("hop");
-                
             }
 
             if (this.transform.position.x > leftMinor.position.x)
             {
-
                 this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
-
                 this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * -1 * horSpeed, this.transform.position.y + Time.deltaTime * verthop, this.transform.position.z);
 
             }
@@ -193,7 +287,7 @@ public class Boss1 : MonoBehaviour
         }
     }
 
-    */
+    //*/
 
     public void ShotsFired()
     {
@@ -243,4 +337,9 @@ public class Boss1 : MonoBehaviour
         anim.ResetTrigger("finished");
     }
 
+    public void ToggleSide()
+    {
+        rightSide = !rightSide;
+        anim.SetTrigger("end");
+    }
 }
