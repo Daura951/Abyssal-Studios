@@ -316,11 +316,24 @@ public class player : MonoBehaviour
             isGrounded = true;
         }
 
+        
+
+
         /* Replaced this with a Killplane script I thought it 
         would be easier if we had to use it again. -V
         else if (collision.gameObject.tag == "Death") { }
             //Application.LoadLevel(1);*/
     }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "NPC")
+        {
+            collision.gameObject.GetComponent<DialogueParser>().setInteracted(true);
+        }
+    }
+
+
 
     private void dash()
     {
