@@ -58,3 +58,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
+UserSettings/EditorUserSettings.asset
+
+Assets/Scenes/FragTest.unity
+
+Assets/Scenes/WallJumpTest.unity
