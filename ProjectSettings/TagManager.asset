@@ -20,10 +20,13 @@ TagManager:
   - NPC
   - NField
   - DField
+
   - WalkSFX
   - JumpSFX
   - GrappleSFX
   - ShootSFX
+  - Boss
+
   layers:
   - Default
   - TransparentFX
@@ -38,7 +41,7 @@ TagManager:
   - Fragments
   - Grapple
   - NPC
-  - 
+  - Ebullet
   - 
   - 
   - 

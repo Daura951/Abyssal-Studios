@@ -2,44 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet : MonoBehaviour
-
+public class shot : MonoBehaviour
 {
-    private int damage;
-
-    // Start is called before the first frame update
+    [SerializeField] private int speed;
+    private int damage =1;
+    
     void Start()
     {
-        damage = 1;
-        //Please no touchie the transport layer -V
-        Physics2D.IgnoreLayerCollision(6, 7, true);
+        Physics2D.IgnoreLayerCollision(13, 7, true);
+        Physics2D.IgnoreLayerCollision(13, 8, true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
 
-    
-    
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag == "Ground")
+            Destroy(this.gameObject);
 
 
         else if (collision.gameObject.tag == "Wall")
-         Destroy(this.gameObject);
+            Destroy(this.gameObject);
 
         else if (collision.gameObject.tag == "ExWall")
-                Destroy(this.gameObject);
+            Destroy(this.gameObject);
 
         else if (collision.gameObject.tag == "NWall")
             Destroy(this.gameObject);
 
 
-        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
+        if (collision.gameObject.tag == "Player")
 
         {
             Destroy(this.gameObject);

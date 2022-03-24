@@ -14,17 +14,30 @@ public class Patrols : MonoBehaviour
     [SerializeField] private float flySpeed;
     [SerializeField] private bool flying;
 
+    [SerializeField] private Animator anims;
+    
+    [SerializeField] private float idle;
+    private float idleTime;
+
     private bool leftFace;
     private bool risingEdge;
 
     private int flap;
     private Vector3 initialDirection;
 
+    
+  
+
     private void Awake()
     {
         initialDirection = enemy.localScale;
         flap = 1;
         risingEdge = true;
+    }
+
+    private void OnDisable()
+    {
+        anims.SetBool("moving", false);
     }
     
     private void Update()
@@ -80,6 +93,9 @@ public class Patrols : MonoBehaviour
 
     private void MoveInDirection(int _direction, int _fly)
     {
+        idleTime = 0;
+        anims.SetBool("moving",true);
+
        enemy.localScale = new Vector3(Mathf.Abs(initialDirection.x) * _direction, initialDirection.y, initialDirection.z);
         
        enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed, enemy.position.y +Time.deltaTime * _fly * flySpeed, enemy.position.z);
@@ -88,7 +104,14 @@ public class Patrols : MonoBehaviour
 
     private void ChangeDirection()
     {
-        leftFace = !leftFace;
+        anims.SetBool("moving", false);
+        idleTime += Time.deltaTime;
+
+        if(idleTime > idle)
+        {
+            leftFace = !leftFace;
+        }
+        
     }
 
 }

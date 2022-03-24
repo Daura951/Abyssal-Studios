@@ -11,16 +11,18 @@ public class RangedEnemy : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Transform shotPoint;
-    [SerializeField] private GameObject[] shot; 
+    [SerializeField] private GameObject shot;
     private float cooldownTimer = Mathf.Infinity;
     private Animator anim;
 
+    private Patrols enemyPatrol;
 
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        enemyPatrol = GetComponentInChildren<Patrols>();
     }
 
     private void Update()
@@ -38,19 +40,24 @@ public class RangedEnemy : MonoBehaviour
 
         }
 
-        else
+        if (enemyPatrol != null)
         {
-            anim.ResetTrigger("Attack");
+            enemyPatrol.enabled = !PlayerInSight();
         }
-
-
     }
 
     private void RangedAttack()
     {
         cooldownTimer = 0;
-        shot[0].transform.position = shotPoint.position;
-       // shot[0].GetComponent<l>
+        if (this.transform.position.x < shotPoint.position.x)
+        {
+            Instantiate(shot, shotPoint.position, Quaternion.identity, this.transform);
+        }
+        else
+        {
+            Instantiate(shot, shotPoint.position, Quaternion.Euler (180f, 0f, 0f), this.transform);
+        }
+        
     }
 
     private bool PlayerInSight()
@@ -70,5 +77,10 @@ public class RangedEnemy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
+    }
+
+    private void EndAttack()
+    {
+        anim.ResetTrigger("Attack");
     }
 }
