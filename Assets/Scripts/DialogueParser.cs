@@ -34,7 +34,7 @@ public class DialogueParser : MonoBehaviour
             parse();
         }
 
-        if(Input.GetKeyDown(KeyCode.Q) && !isEnd)
+        if(Input.GetKeyDown(KeyCode.LeftShift) && !isEnd)
         {
             name.text = "";
             dialogue.text = "";
