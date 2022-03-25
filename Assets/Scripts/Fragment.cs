@@ -18,7 +18,7 @@ public class Fragment : MonoBehaviour
     void Update()
     {
 
-        collect = GameObject.FindWithTag("Player").GetComponent<Fraglog>().CheckFrag(Frag);
+        collect = GameObject.FindGameObjectWithTag("Player").GetComponent<Fraglog>().CheckFrag(Frag);
         if (collect > 0)
         {
             Destroy(this.gameObject);
@@ -30,10 +30,11 @@ public class Fragment : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
+           
             collision.gameObject.GetComponent<Fraglog>().UpdateFrag(Frag);
+            Destroy(this.gameObject);
 
-            
+
         }
 
 

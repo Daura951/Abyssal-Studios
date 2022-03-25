@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alpha/AlphaWorld2.unity
     guid: c9866fa3b38904b4dbf7672aec43fc9e
+  - enabled: 1
+    path: Assets/Scenes/BossTest.unity
+    guid: 3e26fccdf70ff7547b50b987a44c735c
   m_configObjects: {}

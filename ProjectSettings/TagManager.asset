@@ -20,28 +20,26 @@ TagManager:
   - NPC
   - NField
   - DField
-
-  - WalkSFX
-  - JumpSFX
   - GrappleSFX
+  - WalkSFX
   - ShootSFX
+  - JumpSFX
   - Boss
-
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Bullet
-  - teleporter
-  - Enemy
-  - Transport
-  - Fragments
-  - Grapple
-  - NPC
-  - Ebullet
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

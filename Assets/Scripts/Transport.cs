@@ -18,6 +18,7 @@ public class Transport : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            print("HI!");
             SceneManager.LoadScene(location);
         }
 
@@ -25,6 +26,7 @@ public class Transport : MonoBehaviour
         else if (collision.gameObject.tag != "Player")
         {
             Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            print(":(");
         }
 
         //Need to stop colliding with enemy -V

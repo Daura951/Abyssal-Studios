@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 4641489784110060920}
   - component: {fileID: 1990909141090654439}
   - component: {fileID: 5277428666932411107}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.23, y: 0.56}
+  m_Size: {x: 0.09, y: 0.51}
   m_EdgeRadius: 0
 --- !u!50 &1897541030771586029
 Rigidbody2D:
@@ -363,10 +363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23243de9c91f6454d95f6136ab481810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSource: {fileID: 0}
-  jumpingSource: {fileID: 0}
-  shootingSource: {fileID: 0}
-  grappleSource: {fileID: 0}
   speed: 5
   jumpForce: 5
   bulletOrigin: {fileID: 7337924459537402385}
@@ -389,6 +385,7 @@ MonoBehaviour:
   step: 0.05
   isGrappling: 0
   grapple: {x: 0, y: 0}
+  grappleObj: {fileID: 0}
   FragUI: {fileID: 1762674360309425094}
 --- !u!114 &4729997909491914443
 MonoBehaviour:

@@ -40,7 +40,7 @@ public class bbshot : MonoBehaviour
         if (collision.gameObject.tag == "Player")
 
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
             collision.gameObject.GetComponent<Health>().TakeDamage(damage);
         }
     }
