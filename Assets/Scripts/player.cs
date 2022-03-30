@@ -8,6 +8,7 @@ public class player : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool isRight = true;
+    private Animator anim;
 
 
     //SFX stuff
@@ -37,6 +38,7 @@ public class player : MonoBehaviour
     private float dashTime;
     public float startDashTime;
     private int dir;
+    private bool canDash = false;
 
 
     //For Wall Jumping
@@ -97,6 +99,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         joint = GetComponent<DistanceJoint2D>();
         joint.enabled = false;
@@ -148,7 +151,10 @@ public class player : MonoBehaviour
     private void FixedUpdate()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
-        
+
+        if (moveX != 0)
+            anim.SetBool("moving", true);
+        else anim.SetBool("moving", false);
 
         if (isRight && moveX < 0)
         {
@@ -173,6 +179,8 @@ public class player : MonoBehaviour
         {
             if(!canInteract)
             {
+                anim.SetBool("isShooting", true);
+
                 GameObject bulletInst = Instantiate(bullet, bulletOrigin.position, Quaternion.identity);
                 if (isRight)
                 {
@@ -184,6 +192,7 @@ public class player : MonoBehaviour
                 {
                     shootingSource.Play();
                 }
+                Invoke("endShoot", .5f);
             }
 
             else
@@ -332,6 +341,7 @@ public class player : MonoBehaviour
         {
             isGrounded = true;
             dashTime = startDashTime;
+            canDash = false;
         }
         if (collision.gameObject.tag == "Wall" && upgrades.isActives[1] && isWallJumpUnlocked)
         {
@@ -353,6 +363,7 @@ public class player : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = false;
+            canDash = true;
         
         }
 
@@ -382,15 +393,17 @@ public class player : MonoBehaviour
     {
         if (dir == 0)
         {
-            if (!isRight && Input.GetKeyDown(KeyCode.X))
+            if (!isRight && Input.GetKeyDown(KeyCode.X) && canDash)
             {
                 dir = 1;
             }
 
-            else if (isRight && Input.GetKeyDown(KeyCode.X))
+            else if (isRight && Input.GetKeyDown(KeyCode.X) && canDash)
             {
                 dir = 2;
             }
+
+            
 
         }
 
@@ -409,12 +422,17 @@ public class player : MonoBehaviour
                 dashTime -= Time.deltaTime;
             }
 
-            if (dir == 1)
-                rb.AddForce(Vector2.left * dashSpeed);
+
+            if(canDash)
+            {
+                if (dir == 1)
+                    rb.AddForce(Vector2.left * dashSpeed);
 
 
-            else if (dir == 2)
-                rb.AddForce(Vector2.right * dashSpeed);
+                else if (dir == 2)
+                    rb.AddForce(Vector2.right * dashSpeed);
+            }
+         
         }
     }
 
@@ -422,6 +440,11 @@ public class player : MonoBehaviour
     public void setThrown(bool newThrown)
     {
         thrown = newThrown;
+    }
+
+    private void endShoot()
+    {
+        anim.SetBool("isShooting", false);
     }
 }
 
