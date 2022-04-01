@@ -29,18 +29,18 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - Player
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - teleporter
+  - Enemy
+  - Transport
+  - Fragments
+  - Grapple
+  - NPC
+  - Ebullet
+  - Boss
   - 
   - 
   - 
