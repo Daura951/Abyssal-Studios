@@ -51,6 +51,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: finished
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: testing
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2528627492992093379}
   m_Solo: 0
@@ -567,7 +570,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bigleap
-  m_Speed: 1
+  m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6448186710210120728}
@@ -663,7 +666,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 1
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 2
   m_OrderedInterruption: 1
@@ -734,6 +737,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: sight
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: testing
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7809760742143547329}
