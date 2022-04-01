@@ -1,7 +1,16 @@
 fileFormatVersion: 2
 guid: 2119ea6f7570bca46800b8dbf5687dbd
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2284501339156170966
+    second: MainCharacter_Shoot_0
+  - first:
+      213: -8427142403910707939
+    second: MainCharacter_Shoot_1
+  - first:
+      213: -1951904862483001986
+    second: MainCharacter_Shoot_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -24,7 +33,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -107,10 +115,10 @@ TextureImporter:
       name: MainCharacter_Shoot_0
       rect:
         serializedVersion: 2
-        x: 21
+        x: 0
         y: 66
-        width: 23
-        height: 56
+        width: 64
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,8 +126,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cab974a79b0d23f499be52ccb07a9e89
-      internalID: 227656819
+      spriteID: 6d8ce493ddd24bf10800000000000000
+      internalID: 2284501339156170966
       vertices: []
       indices: 
       edges: []
@@ -128,10 +136,10 @@ TextureImporter:
       name: MainCharacter_Shoot_1
       rect:
         serializedVersion: 2
-        x: 85
+        x: 64
         y: 66
-        width: 23
-        height: 56
+        width: 64
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,8 +147,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92bd932497ccda647a41ec7583a4c119
-      internalID: -1303101913
+      spriteID: d15554fe1a6cc0b80800000000000000
+      internalID: -8427142403910707939
       vertices: []
       indices: 
       edges: []
@@ -149,10 +157,10 @@ TextureImporter:
       name: MainCharacter_Shoot_2
       rect:
         serializedVersion: 2
-        x: 21
+        x: 0
         y: 2
-        width: 23
-        height: 56
+        width: 64
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,8 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fd78f761b81b1a4491e9b66f54e6b51
-      internalID: -180016012
+      spriteID: e7dc7548ed079e4e0800000000000000
+      internalID: -1951904862483001986
       vertices: []
       indices: 
       edges: []
@@ -176,10 +184,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      MainCharacter_Shoot_2: -180016012
-      MainCharacter_Shoot_1: -1303101913
-      MainCharacter_Shoot_0: 227656819
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,25 +1,13 @@
 fileFormatVersion: 2
-guid: 37d21f6090a182c4fb7d701753d2ebae
+guid: 72319da698083e1428d65d856acd656d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3243885133063203800
-    second: MainCharacter_WalkingAnimation_0
+      213: 3018313729726164629
+    second: Tank_IDLE_0
   - first:
-      213: 5166951972817830816
-    second: MainCharacter_WalkingAnimation_1
-  - first:
-      213: 2072749626972199152
-    second: MainCharacter_WalkingAnimation_2
-  - first:
-      213: -8720562567243494923
-    second: MainCharacter_WalkingAnimation_3
-  - first:
-      213: -6703604945939287077
-    second: MainCharacter_WalkingAnimation_4
-  - first:
-      213: 7404367884913690721
-    second: MainCharacter_WalkingAnimation_5
+      213: 4605132069749859602
+    second: Tank_IDLE_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +49,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -106,7 +94,43 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -121,13 +145,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_0
+      name: Tank_IDLE_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 130
+        y: 74
         width: 64
-        height: 60
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,41 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 824d89788a76bf2d0800000000000000
-      internalID: -3243885133063203800
+      spriteID: 59e2301785433e920800000000000000
+      internalID: 3018313729726164629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 130
-        width: 64
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a38f4f8173b4b740800000000000000
-      internalID: 5166951972817830816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_2
+      name: Tank_IDLE_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 66
+        y: 10
         width: 64
-        height: 60
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,71 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f85008cdc2e3cc10800000000000000
-      internalID: 2072749626972199152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_3
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 66
-        width: 64
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f902e17c865af680800000000000000
-      internalID: -8720562567243494923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2
-        width: 64
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd3bcb2a1d208f2a0800000000000000
-      internalID: -6703604945939287077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 2
-        width: 64
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 168479e7c5991c660800000000000000
-      internalID: 7404367884913690721
+      spriteID: 2152339e737b8ef30800000000000000
+      internalID: 4605132069749859602
       vertices: []
       indices: 
       edges: []

@@ -1,7 +1,16 @@
 fileFormatVersion: 2
 guid: 432a21367a481da47b3bb08d29d23d47
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6512351096711354596
+    second: MainCharacter_KneelingShoot_0
+  - first:
+      213: -8170892587528210404
+    second: MainCharacter_KneelingShoot_1
+  - first:
+      213: 7518041463706191853
+    second: MainCharacter_KneelingShoot_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -24,7 +33,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -107,10 +115,10 @@ TextureImporter:
       name: MainCharacter_KneelingShoot_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 0
         y: 65
-        width: 32
-        height: 53
+        width: 64
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,8 +126,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2afb8334807691f40aadb969340783d2
-      internalID: 405457249
+      spriteID: 4e81b1c81d4806a50800000000000000
+      internalID: 6512351096711354596
       vertices: []
       indices: 
       edges: []
@@ -128,10 +136,10 @@ TextureImporter:
       name: MainCharacter_KneelingShoot_1
       rect:
         serializedVersion: 2
-        x: 79
-        y: 66
-        width: 38
-        height: 47
+        x: 64
+        y: 65
+        width: 64
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,8 +147,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c5f6b78e937ca44fbaf0a71904cb392
-      internalID: 1961223899
+      spriteID: c18328e9b782b9e80800000000000000
+      internalID: -8170892587528210404
       vertices: []
       indices: 
       edges: []
@@ -149,10 +157,10 @@ TextureImporter:
       name: MainCharacter_KneelingShoot_2
       rect:
         serializedVersion: 2
-        x: 14
+        x: 0
         y: 1
-        width: 32
-        height: 53
+        width: 64
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,8 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 482f1b3e16a85bb4b895642effa20e54
-      internalID: -117547027
+      spriteID: de78dd201e2755860800000000000000
+      internalID: 7518041463706191853
       vertices: []
       indices: 
       edges: []
@@ -176,10 +184,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      MainCharacter_KneelingShoot_0: 405457249
-      MainCharacter_KneelingShoot_1: 1961223899
-      MainCharacter_KneelingShoot_2: -117547027
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

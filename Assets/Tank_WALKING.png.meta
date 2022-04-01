@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 37d21f6090a182c4fb7d701753d2ebae
+guid: 23dbc482856419d4bae2e79e1b52830a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3243885133063203800
-    second: MainCharacter_WalkingAnimation_0
+      213: -5342363608598777270
+    second: Tank_WALKING_0
   - first:
-      213: 5166951972817830816
-    second: MainCharacter_WalkingAnimation_1
+      213: 501039800885100286
+    second: Tank_WALKING_1
   - first:
-      213: 2072749626972199152
-    second: MainCharacter_WalkingAnimation_2
+      213: 1464098369477684762
+    second: Tank_WALKING_2
   - first:
-      213: -8720562567243494923
-    second: MainCharacter_WalkingAnimation_3
-  - first:
-      213: -6703604945939287077
-    second: MainCharacter_WalkingAnimation_4
-  - first:
-      213: 7404367884913690721
-    second: MainCharacter_WalkingAnimation_5
+      213: 473671359112770355
+    second: Tank_WALKING_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +55,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -69,7 +63,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -93,41 +87,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_0
+      name: Tank_WALKING_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 130
+        y: 74
         width: 64
-        height: 60
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,20 +105,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 824d89788a76bf2d0800000000000000
-      internalID: -3243885133063203800
+      spriteID: a42fe706a9c1cd5b0800000000000000
+      internalID: -5342363608598777270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_1
+      name: Tank_WALKING_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 130
+        y: 74
         width: 64
-        height: 60
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a38f4f8173b4b740800000000000000
-      internalID: 5166951972817830816
+      spriteID: efeb6165b0d04f600800000000000000
+      internalID: 501039800885100286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_2
+      name: Tank_WALKING_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 66
+        y: 10
         width: 64
-        height: 60
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f85008cdc2e3cc10800000000000000
-      internalID: 2072749626972199152
+      spriteID: a1e22fcb5b5815410800000000000000
+      internalID: 1464098369477684762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_3
+      name: Tank_WALKING_3
       rect:
         serializedVersion: 2
         x: 64
-        y: 66
+        y: 10
         width: 64
-        height: 60
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,55 +168,44 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f902e17c865af680800000000000000
-      internalID: -8720562567243494923
+      spriteID: 333713c6791d29600800000000000000
+      internalID: 473671359112770355
       vertices: []
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2
-        width: 64
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd3bcb2a1d208f2a0800000000000000
-      internalID: -6703604945939287077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainCharacter_WalkingAnimation_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 2
-        width: 64
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 168479e7c5991c660800000000000000
-      internalID: 7404367884913690721
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    outline: []
+    outline:
+    - - {x: -14, y: -37}
+      - {x: -21, y: -32}
+      - {x: -59, y: -32}
+      - {x: -59, y: -54}
+      - {x: -55, y: -56}
+      - {x: -9, y: -56}
+      - {x: -5, y: -52}
+      - {x: -5, y: -47}
+    - - {x: 43, y: -33}
+      - {x: 5, y: -33}
+      - {x: 5, y: -52}
+      - {x: 9, y: -56}
+      - {x: 57, y: -56}
+      - {x: 59, y: -52}
+      - {x: 59, y: -47}
+      - {x: 54, y: -41}
+    - - {x: -47, y: 32}
+      - {x: -59, y: 31}
+      - {x: -59, y: 12}
+      - {x: -58, y: 8}
+      - {x: -7, y: 8}
+      - {x: -5, y: 11}
+      - {x: -5, y: 18}
+      - {x: -20, y: 32}
+    - - {x: 5, y: 31}
+      - {x: 5, y: 10}
+      - {x: 9, y: 8}
+      - {x: 55, y: 8}
+      - {x: 59, y: 9}
+      - {x: 59, y: 30}
+      - {x: 48, y: 31}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
