@@ -27,7 +27,7 @@ public class player : MonoBehaviour
     private bool isMoving;
     private float moveX;
     public upgradeSelection upgrades;
-
+    public bool canShoot = true;
 
     //Hi, I'm invading your project! -Joseph Leung
     //Hi Joseph!
@@ -177,8 +177,13 @@ public class player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if(!canInteract)
+            if(!canInteract && canShoot)
             {
+                if(canShoot)
+                {
+                    canShoot = !canShoot;
+                }
+
                 anim.SetBool("isShooting", true);
 
                 GameObject bulletInst = Instantiate(bullet, bulletOrigin.position, Quaternion.identity);
