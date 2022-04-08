@@ -242,72 +242,30 @@ public class Boss1 : MonoBehaviour
     }
 
 
-    /* Ignore this she doesn't wanna work rn - V
-    public void LittleLeap()
-    {
-        if (rightSide)
-        {
-
-            if (this.transform.position.x > rightMinor.position.x)
-            {
-                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
-                this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * -1 * horSpeed, this.transform.position.y + Time.deltaTime * verthop, this.transform.position.z);
-            }
-            else 
-            {
-                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * -1, initialDirection.y, initialDirection.z);
-                this.transform.position = new Vector3(rightMinor.position.x, this.transform.position.y + Time.deltaTime, this.transform.position.z);
-                anim.SetTrigger("hop");
-            }
-
-            if (this.transform.position.x > leftMinor.position.x)
-            {
-                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
-                this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * -1 * horSpeed, this.transform.position.y + Time.deltaTime * verthop, this.transform.position.z);
-
-            }
-            else
-            {
-                anim.SetTrigger("hop");
-            }
-
-            if (this.transform.position.x > leftBound.position.x)
-            {
-
-                this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
-
-                this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * -1 * horSpeed, this.transform.position.y + Time.deltaTime * verthop, this.transform.position.z);
-
-            }
-            else
-            {
-                anim.SetTrigger("hop");
-            }
-
-        }
-    }
-
-    //*/
 
     public void ShotsFired()
     {
        if (rightSide)
         {
-            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 0f), this.transform);
-            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, -5f), this.transform);
-            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, -15f), this.transform);
-            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, -25f), this.transform);
-            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, -45f), this.transform);
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 0f));//, this.transform);
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, -5f));//, this.transform);
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, -15f));//, this.transform);
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, -25f));//, this.transform);
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, -45f));//, this.transform);
         }
         else
         {
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 0f, 0f));
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 0f, -5f));
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 0f, -15f));
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 0f, -25f));
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 0f, -45f));
+            /*Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 0f));//, this.transform);    
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 5f));//, this.transform);
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 15f));//, this.transform);
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 25f));//, this.transform);
+            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 45f));//, this.transform);*/
 
-            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 0f), this.transform);    
-            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 5f), this.transform);
-            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 15f), this.transform);
-            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 25f), this.transform);
-            Instantiate(shot, stinger.position, Quaternion.Euler(0f, 180f, 45f), this.transform);
-     
         }
     }
 

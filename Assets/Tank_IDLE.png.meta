@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 432a21367a481da47b3bb08d29d23d47
+guid: 72319da698083e1428d65d856acd656d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6512351096711354596
-    second: MainCharacter_KneelingShoot_0
+      213: 3018313729726164629
+    second: Tank_IDLE_0
   - first:
-      213: -8170892587528210404
-    second: MainCharacter_KneelingShoot_1
-  - first:
-      213: 7518041463706191853
-    second: MainCharacter_KneelingShoot_2
+      213: 4605132069749859602
+    second: Tank_IDLE_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -42,7 +39,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -53,10 +50,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,7 +95,43 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,13 +146,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainCharacter_KneelingShoot_0
+      name: Tank_IDLE_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 65
+        y: 74
         width: 64
-        height: 60
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,41 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e81b1c81d4806a50800000000000000
-      internalID: 6512351096711354596
+      spriteID: 59e2301785433e920800000000000000
+      internalID: 3018313729726164629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacter_KneelingShoot_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 65
-        width: 64
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c18328e9b782b9e80800000000000000
-      internalID: -8170892587528210404
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainCharacter_KneelingShoot_2
+      name: Tank_IDLE_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
+        y: 10
         width: 64
-        height: 60
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de78dd201e2755860800000000000000
-      internalID: 7518041463706191853
+      spriteID: 2152339e737b8ef30800000000000000
+      internalID: 4605132069749859602
       vertices: []
       indices: 
       edges: []
@@ -186,9 +198,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MainCharacter_KneelingShoot_0: 6512351096711354596
-      MainCharacter_KneelingShoot_1: -8170892587528210404
-      MainCharacter_KneelingShoot_2: 7518041463706191853
+      Tank_IDLE_1: 4605132069749859602
+      Tank_IDLE_0: 3018313729726164629
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
