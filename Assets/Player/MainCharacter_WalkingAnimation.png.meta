@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -256,6 +257,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MainCharacter_WalkingAnimation_4: -6703604945939287077
+      MainCharacter_WalkingAnimation_0: -3243885133063203800
+      MainCharacter_WalkingAnimation_2: 2072749626972199152
+      MainCharacter_WalkingAnimation_3: -8720562567243494923
+      MainCharacter_WalkingAnimation_5: 7404367884913690721
+      MainCharacter_WalkingAnimation_1: 5166951972817830816
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
