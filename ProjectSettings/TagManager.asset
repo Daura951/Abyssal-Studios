@@ -25,6 +25,7 @@ TagManager:
   - ShootSFX
   - JumpSFX
   - Boss
+  - EShot
   layers:
   - Default
   - TransparentFX
