@@ -18,7 +18,6 @@ public class Transport : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            print("HI!");
             SceneManager.LoadScene(location);
         }
 

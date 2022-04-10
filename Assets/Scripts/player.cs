@@ -232,7 +232,6 @@ public class player : MonoBehaviour
             isGrounded = !isGrounded;
             if (!jumpingSource.isPlaying)
             {
-                print("owo");
                 jumpingSource.Play();
             }
 
