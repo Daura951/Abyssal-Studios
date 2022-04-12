@@ -40,6 +40,7 @@ public class Fraglog : MonoBehaviour
 
     void Update()
     {
+        
         Alpha.SetActive(check1);
         Bravo.SetActive(check2);
         Charlie.SetActive(check3);
@@ -58,6 +59,112 @@ public class Fraglog : MonoBehaviour
     {
         checkers = FLog[_frag];
         return checkers;
+    }
+
+    public void setCheck(int checkIndex, bool newVal)
+    {
+
+        if (checkIndex == 0)
+        {
+            check1 = newVal;
+        }
+        else if (checkIndex == 1)
+        {
+             check2 = newVal; 
+        }
+        else if (checkIndex == 2)
+        {
+             check3 = newVal; 
+        }
+        else if (checkIndex == 3)
+        {
+             check4 = newVal; 
+        }
+        else if (checkIndex == 4)
+        {
+             check5 = newVal; 
+        }
+        else if (checkIndex == 5)
+        {
+             check6 = newVal; 
+        }
+        else if (checkIndex == 6)
+        {
+             check7 = newVal; 
+        }
+        else if (checkIndex == 7)
+        {
+             check8 = newVal; 
+        }
+        else if (checkIndex == 8)
+        {
+             check9 = newVal; 
+        }
+        else if (checkIndex == 9)
+        {
+             check10 = newVal; 
+        }
+        else if (checkIndex == 10)
+        {
+             check11 = newVal; 
+        }
+        else
+        {
+             check12 = newVal; 
+        }
+    }
+
+    public bool getCheck(int checkIndex)
+    {
+       
+        if (checkIndex == 0)
+        {
+            return check1;
+        }
+        else if (checkIndex == 1)
+        {
+            return check2;
+        }
+        else if (checkIndex == 2)
+        {
+            return check3;
+        }
+        else if (checkIndex == 3)
+        {
+            return check4;
+        }
+        else if (checkIndex == 4)
+        {
+            return check5;
+        }
+        else if (checkIndex == 5)
+        {
+            return check6;
+        }
+        else if (checkIndex == 6)
+        {
+            return check7;
+        }
+        else if (checkIndex == 7)
+        {
+            return check8;
+        }
+        else if (checkIndex == 8)
+        {
+            return check9;
+        }
+        else if (checkIndex == 9)
+        {
+            return check10;
+        }
+        else if(checkIndex == 10)
+        {
+            return check11;
+        }
+        else
+        {
+            return check12;
+        }
     }
 
     public void UpdateFrag(int _frick)

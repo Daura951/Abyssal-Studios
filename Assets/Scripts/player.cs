@@ -33,7 +33,7 @@ public class player : MonoBehaviour
     //Hi Joseph!
 
     //for dash
-    private bool isDashUnlocked = true; //will change and logic for fragment amt will be in
+    private bool isDashUnlocked = false; //will change and logic for fragment amt will be in
     public float dashSpeed;
     private float dashTime;
     public float startDashTime;
@@ -42,7 +42,7 @@ public class player : MonoBehaviour
 
 
     //For Wall Jumping
-    private bool isWallJumpUnlocked = true;
+    private bool isWallJumpUnlocked = false;
     public float wallSlidingSpeed;
 
     private bool wallJumping;
@@ -52,7 +52,7 @@ public class player : MonoBehaviour
     //
 
     //For Bomb
-    private bool isBombUnlocked = true;
+    private bool isBombUnlocked = false;
     private bool thrown = false;
     public GameObject bomb;
     public Rigidbody2D bombRB;
@@ -61,7 +61,7 @@ public class player : MonoBehaviour
     //
 
     //For graple
-    private bool isGrapleUnlocked = true;
+    private bool isGrapleUnlocked = false;
     public LineRenderer line;
     private DistanceJoint2D joint;
     private Vector3 targetPos;
@@ -93,12 +93,31 @@ public class player : MonoBehaviour
 
     private bool canInteract = false;
     private GameObject currentNPC;
+    public string[] fragmentSaveNames = { "Frag0", "Frag1", "Frag2", "Frag3", "Frag4", "Frag5", "Frag6", "Frag7", "Frag8", "Frag9", "Frag10", "Frag11" };
 
 
+
+    private void Awake()
+    {
+        for (int i = 0; i < 12; i++)
+        {
+            if (PlayerPrefs.GetInt(fragmentSaveNames[i]) == 1)
+            {
+                print(fragmentSaveNames[i] + " "+i);
+                this.gameObject.GetComponent<Fraglog>().setCheck(i, true);
+                if (this.gameObject.GetComponent<Fraglog>().getCheck(i))
+                {
+                    UnlockFragment(i);
+                }
+            }
+        }
+
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         joint = GetComponent<DistanceJoint2D>();
@@ -150,6 +169,17 @@ public class player : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            for(int i = 0; i < 12; i++)
+            {
+                PlayerPrefs.SetInt(fragmentSaveNames[i], 0);
+            }
+            Application.LoadLevel(7);
+            
+        }
+
         float moveX = Input.GetAxisRaw("Horizontal");
 
         if (moveX != 0)
@@ -174,6 +204,7 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -449,6 +480,60 @@ public class player : MonoBehaviour
     private void endShoot()
     {
         anim.SetBool("isShooting", false);
+    }
+
+    public void UnlockFragment(int index)
+    {
+        //if(index != 0)
+        //{
+            //PlayerPrefs.SetInt(fragmentSaveNames[index - 1], 1);
+        //}
+            
+       // else
+        PlayerPrefs.SetInt(fragmentSaveNames[index], 1);
+
+        switch (index)
+        {
+            case 0:
+
+                isDashUnlocked = true;
+                break;
+
+            case 1:
+                dashSpeed += 10;
+                break;
+
+            case 2:
+                dashSpeed += 10;
+                break;
+            case 3:
+                isWallJumpUnlocked = true;
+                break;
+            case 4:
+                jumpForce = 7;
+                break;
+            case 5:
+                jumpForce = 8;
+                break;
+            case 6:
+                isBombUnlocked = true;
+                break;
+            case 9:
+                isGrapleUnlocked = true;
+                break;
+            case 10:
+                GameObject grappler = GameObject.FindGameObjectWithTag("grapRad");
+                grappler.GetComponent<CircleCollider2D>().radius = 1.5f;
+                break;
+            case 11:
+                GameObject grapply = GameObject.FindGameObjectWithTag("grapRad");
+                grapply.GetComponent<CircleCollider2D>().radius = 2.0f;
+                break;
+
+
+
+
+        }
     }
 }
 

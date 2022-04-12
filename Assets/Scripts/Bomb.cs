@@ -11,6 +11,14 @@ public class Bomb : MonoBehaviour
     private AudioSource bombSource;
     void Start()
     {
+        if(pylr.GetComponent<Fraglog>().getCheck(7))
+        {
+            detonationTime = 2;
+        }
+        else if(pylr.GetComponent<Fraglog>().getCheck(8))
+        {
+            detonationTime = 5;
+        }
         pylr = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<player>();
         bombSource = GameObject.FindGameObjectWithTag("BombSFX").GetComponent<AudioSource>();
     }
