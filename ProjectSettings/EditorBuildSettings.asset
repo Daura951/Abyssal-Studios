@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Beta/BetaTitle.unity
+    path: Assets/Scenes/Beta/Title.unity
     guid: 9ef0b6ac31d70a34aa0c227cfef028cb
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
@@ -36,12 +36,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Boss_Testing/BossTest.unity
     guid: 3e26fccdf70ff7547b50b987a44c735c
   - enabled: 1
-    path: Assets/Scenes/Beta/BetaHub.unity
+    path: Assets/Scenes/Beta/Hub.unity
     guid: 149132ba87ec34a4f8901a94e2fca70f
   - enabled: 1
-    path: Assets/Scenes/Beta/BetaW1.unity
+    path: Assets/Scenes/Beta/W1.unity
     guid: f209d696afac4e143a8820003a815e47
+  - enabled: 1
+    path: Assets/Scenes/Beta/W2.unity
+    guid: ce9b6bbec367b2546bbf39a8acf2aa95
+  - enabled: 1
+    path: Assets/Scenes/Beta/W3.unity
+    guid: e9503b01c7b127748980b3131a039a62
   - enabled: 1
     path: Assets/Scenes/Beta/BossW1.unity
     guid: 37d9e2f208dfe1b42a7484148199edb8
+  - enabled: 1
+    path: Assets/Scenes/Beta/BossW2.unity
+    guid: 5fe96cc06169ec34abf4958913a6549e
+  - enabled: 1
+    path: Assets/Scenes/Beta/BossW3.unity
+    guid: 56f076c715b030b4789835637b103c5e
   m_configObjects: {}

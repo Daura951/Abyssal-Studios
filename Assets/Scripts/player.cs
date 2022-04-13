@@ -176,7 +176,7 @@ public class player : MonoBehaviour
             {
                 PlayerPrefs.SetInt(fragmentSaveNames[i], 0);
             }
-            Application.LoadLevel(7);
+            Application.LoadLevel(0);
             
         }
 
