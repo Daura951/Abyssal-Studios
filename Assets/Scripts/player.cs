@@ -39,10 +39,13 @@ public class player : MonoBehaviour
     public float startDashTime;
     private int dir;
     private bool canDash = false;
+    private bool canDoubleDash = false;
+    private bool canTripleDash = false;
+    private int dashAmt = 1;
 
 
     //For Wall Jumping
-    private bool isWallJumpUnlocked = false;
+    private bool isWallJumpUnlocked = true;
     public float wallSlidingSpeed;
 
     private bool wallJumping;
@@ -93,7 +96,7 @@ public class player : MonoBehaviour
 
     private bool canInteract = false;
     private GameObject currentNPC;
-    public string[] fragmentSaveNames = { "Frag0", "Frag1", "Frag2", "Frag3", "Frag4", "Frag5", "Frag6", "Frag7", "Frag8", "Frag9", "Frag10", "Frag11" };
+    public string[] fragmentSaveNames = { "Frag0", "Frag1", "Frag2", "Frag3", "Frag4", "Frag5", "Frag6", "Frag7", "Frag8" };
 
 
 
@@ -274,7 +277,7 @@ public class player : MonoBehaviour
         }
 
         //print(upgrades.isActives[2] + " " + isBombUnlocked + " " + Input.GetKeyDown(KeyCode.X) + " " + !thrown);
-        if (upgrades.isActives[2] && isBombUnlocked && Input.GetKeyDown(KeyCode.X) && !thrown)
+        if (upgrades.isActives[1] && isBombUnlocked && Input.GetKeyDown(KeyCode.X) && !thrown)
         {
             GameObject bombInst = Instantiate(bomb, bulletOrigin.position, Quaternion.identity);
             if (isRight)
@@ -286,7 +289,7 @@ public class player : MonoBehaviour
             thrown = !thrown;
         }
 
-        if (upgrades.isActives[3] && isGrapleUnlocked)
+        if (upgrades.isActives[2] && isGrapleUnlocked)
         {
 
             if (joint.distance > .5f)
@@ -378,7 +381,7 @@ public class player : MonoBehaviour
             dashTime = startDashTime;
             canDash = false;
         }
-        if (collision.gameObject.tag == "Wall" && upgrades.isActives[1] && isWallJumpUnlocked)
+        if (collision.gameObject.tag == "Wall"  && isWallJumpUnlocked)
         {
             isGrounded = true;
         }
@@ -399,6 +402,15 @@ public class player : MonoBehaviour
         {
             isGrounded = false;
             canDash = true;
+
+            if (canDoubleDash)
+                dashAmt = 2;
+
+            else if (canTripleDash)
+                dashAmt = 3;
+
+
+            else dashAmt = 1;
         
         }
 
@@ -428,14 +440,18 @@ public class player : MonoBehaviour
     {
         if (dir == 0)
         {
-            if (!isRight && Input.GetKeyDown(KeyCode.X) && canDash)
+            if (!isRight && Input.GetKeyDown(KeyCode.X) && canDash && dashAmt!=0)
             {
                 dir = 1;
+                print(dashAmt);
+                dashAmt--;
             }
 
-            else if (isRight && Input.GetKeyDown(KeyCode.X) && canDash)
+            else if (isRight && Input.GetKeyDown(KeyCode.X) && canDash && dashAmt!=0)
             {
                 dir = 2;
+                print(dashAmt);
+                dashAmt--;
             }
 
             
@@ -448,7 +464,7 @@ public class player : MonoBehaviour
             {
                 dir = 0;
 
-                if (isGrounded)
+                if (isGrounded || dashTime!=0)
                     dashTime = startDashTime;
             }
 
@@ -466,6 +482,7 @@ public class player : MonoBehaviour
 
                 else if (dir == 2)
                     rb.AddForce(Vector2.right * dashSpeed);
+               
             }
          
         }
@@ -501,32 +518,25 @@ public class player : MonoBehaviour
                 break;
 
             case 1:
-                dashSpeed += 10;
+                canDoubleDash = true;
                 break;
 
             case 2:
-                dashSpeed += 10;
+                canTripleDash = true;
+                canDoubleDash = false;
+                dashAmt = 3;
                 break;
             case 3:
-                isWallJumpUnlocked = true;
-                break;
-            case 4:
-                jumpForce = 7;
-                break;
-            case 5:
-                jumpForce = 8;
-                break;
-            case 6:
                 isBombUnlocked = true;
                 break;
-            case 9:
+            case 6:
                 isGrapleUnlocked = true;
                 break;
-            case 10:
+            case 7:
                 GameObject grappler = GameObject.FindGameObjectWithTag("grapRad");
                 grappler.GetComponent<CircleCollider2D>().radius = 1.5f;
                 break;
-            case 11:
+            case 8:
                 GameObject grapply = GameObject.FindGameObjectWithTag("grapRad");
                 grapply.GetComponent<CircleCollider2D>().radius = 2.0f;
                 break;
