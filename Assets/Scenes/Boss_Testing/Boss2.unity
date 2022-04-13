@@ -6303,7 +6303,7 @@ Animator:
   m_GameObject: {fileID: 1903618918}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d2e57029e8206a144a3be5a6641956e1, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea1eeacf804eaac46a096421142649eb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6354,6 +6354,7 @@ MonoBehaviour:
   stage1: {fileID: 844352209}
   stage2: {fileID: 1562268591}
   stage3: {fileID: 1860682961}
+  hack: 0
 --- !u!1 &2030042578
 GameObject:
   m_ObjectHideFlags: 0
