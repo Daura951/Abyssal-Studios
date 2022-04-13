@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fraglog : MonoBehaviour
 {
-    public static int[] FLog = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public static int[] FLog = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0};
     private int checkers;
     public GameObject FragUI;
     public GameObject Alpha;
@@ -16,9 +16,6 @@ public class Fraglog : MonoBehaviour
     public GameObject Gamma;
     public GameObject Hotel;
     public GameObject India;
-    public GameObject Juliet;
-    public GameObject Kilo;
-    public GameObject Lima;
     static private bool check1 = false;
     static private bool check2 = false;
     static private bool check3 = false;
