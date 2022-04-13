@@ -56,7 +56,7 @@ public class Boss2 : MonoBehaviour
     [SerializeField] private GameObject stage3;
     private int phase;
 
-
+    [SerializeField] private bool hack;
 
 
 
@@ -144,18 +144,22 @@ public class Boss2 : MonoBehaviour
             print("nosir");
         }
 
-        if (limit.currentHealth > 6)
+        if (!hack)
         {
 
-        }
-        else if (limit.currentHealth > 3)
-        {
-            anims.SetTrigger("phase2");
+            if (limit.currentHealth > 6)
+            {
 
-        }
-        else
-        {
-            anims.SetTrigger("phase3");
+            }
+            else if (limit.currentHealth > 3)
+            {
+                anims.SetTrigger("phase2");
+
+            }
+            else
+            {
+                anims.SetTrigger("phase3");
+            }
         }
 
     } 
