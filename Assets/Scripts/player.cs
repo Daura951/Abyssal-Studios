@@ -88,9 +88,7 @@ public class player : MonoBehaviour
     public static GameObject Gamma;
     public static GameObject Hotel;
     public static GameObject India;
-    public static GameObject Juliet;
-    public static GameObject Kilo;
-    public static GameObject Lima;
+
     private int totalFrags;
 
 
@@ -102,7 +100,7 @@ public class player : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 9; i++)
         {
             if (PlayerPrefs.GetInt(fragmentSaveNames[i]) == 1)
             {
@@ -143,31 +141,25 @@ public class player : MonoBehaviour
         grappleSource =  GameObject.FindGameObjectWithTag(sourceTags[3]).GetComponent<AudioSource>();
 
         FragUI = GameObject.FindWithTag("Fragment");
-        Alpha = FragUI.transform.GetChild(12).gameObject;
+        Alpha = FragUI.transform.GetChild(0).gameObject;
         Alpha.SetActive(false);
-        Bravo = FragUI.transform.GetChild(2).gameObject;
+        Bravo = FragUI.transform.GetChild(1).gameObject;
         Bravo.SetActive(false);
-        Charlie = FragUI.transform.GetChild(3).gameObject;
+        Charlie = FragUI.transform.GetChild(2).gameObject;
         Charlie.SetActive(false);
-        Delta = FragUI.transform.GetChild(4).gameObject;
+        Delta = FragUI.transform.GetChild(3).gameObject;
         Delta.SetActive(false);
-        Echo = FragUI.transform.GetChild(5).gameObject;
+        Echo = FragUI.transform.GetChild(4).gameObject;
         Echo.SetActive(false);
-        Foxtrot = FragUI.transform.GetChild(6).gameObject;
+        Foxtrot = FragUI.transform.GetChild(5).gameObject;
         Foxtrot.SetActive(false);
-        Gamma = FragUI.transform.GetChild(7).gameObject;
+        Gamma = FragUI.transform.GetChild(6).gameObject;
         Gamma.SetActive(false);
-        Hotel = FragUI.transform.GetChild(8).gameObject;
+        Hotel = FragUI.transform.GetChild(7).gameObject;
         Hotel.SetActive(false);
-        India = FragUI.transform.GetChild(9).gameObject;
+        India = FragUI.transform.GetChild(8).gameObject;
         India.SetActive(false);
-        Juliet = FragUI.transform.GetChild(10).gameObject;
-        Juliet.SetActive(false);
-        Kilo = FragUI.transform.GetChild(11).gameObject;
-        Kilo.SetActive(false);
-        Lima = FragUI.transform.GetChild(1).gameObject;
-        Lima.SetActive(false);
-
+  
     }
 
     private void FixedUpdate()
@@ -175,7 +167,7 @@ public class player : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.R))
         {
-            for(int i = 0; i < 12; i++)
+            for(int i = 0; i < 9; i++)
             {
                 PlayerPrefs.SetInt(fragmentSaveNames[i], 0);
             }

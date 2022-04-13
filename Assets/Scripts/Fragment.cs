@@ -12,7 +12,7 @@ public class Fragment : MonoBehaviour
 
     void Start()
     {
-        for(int i = 0; i < 12; i++)
+        for(int i = 0; i < 9; i++)
         {
             if (PlayerPrefs.GetInt(GameObject.FindGameObjectWithTag("Player").GetComponent<player>().fragmentSaveNames[i]) == 1 && i == Frag)
             {

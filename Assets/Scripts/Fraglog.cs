@@ -49,6 +49,7 @@ public class Fraglog : MonoBehaviour
 
     public int CheckFrag( int _frag )
     {
+        print(_frag);
         checkers = FLog[_frag];
         return checkers;
     }

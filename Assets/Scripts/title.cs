@@ -30,7 +30,7 @@ public class title : MonoBehaviour
 
     public void newGame()
     {
-        for(int i = 0; i < 12; i++)
+        for(int i = 0; i < 9; i++)
         {
             PlayerPrefs.SetInt(fragmentSaveNames[i], 0);
         }
