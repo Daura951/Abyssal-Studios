@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+
 public class title : MonoBehaviour
 {
     public string[] fragmentSaveNames = { "Frag0", "Frag1", "Frag2", "Frag3", "Frag4", "Frag5", "Frag6", "Frag7", "Frag8", "Frag9", "Frag10", "Frag11" };
+
+    public int openingScene = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +25,7 @@ public class title : MonoBehaviour
 
     public void loadGame()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(openingScene);
     }
 
     public void newGame()
@@ -28,8 +33,8 @@ public class title : MonoBehaviour
         for(int i = 0; i < 12; i++)
         {
             PlayerPrefs.SetInt(fragmentSaveNames[i], 0);
-            SceneManager.LoadScene(7);
         }
+        SceneManager.LoadScene(openingScene);
     }
 
     public void quitGame()
