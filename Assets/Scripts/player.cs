@@ -50,7 +50,7 @@ public class player : MonoBehaviour
     //
 
     //For Bomb
-    private bool isBombUnlocked = true;
+    private bool isBombUnlocked =  true;
     private bool thrown = false;
     public GameObject bomb;
     public Rigidbody2D bombRB;
@@ -91,6 +91,7 @@ public class player : MonoBehaviour
 
     private bool canInteract = false;
     private GameObject currentNPC;
+
 
 
 
@@ -423,5 +424,8 @@ public class player : MonoBehaviour
     {
         thrown = newThrown;
     }
+
+   
+
 }
 

@@ -9,6 +9,10 @@ public class Bomb : MonoBehaviour
     public float detonationTime;
     public player pylr;
     private AudioSource bombSource;
+    
+   //Had to add the Bomb tag to this for boss 3 stuff -V
+
+
     void Start()
     {
         pylr = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<player>();
@@ -39,5 +43,19 @@ public class Bomb : MonoBehaviour
             pylr.setThrown(false);
             bombSource.Play();
         }
+
+        //Needed for Boss 3 -V
+        if (collision.gameObject.tag == "Slot")
+        {
+            if (collision.gameObject.GetComponent<Boss3>().hurtable)
+            {
+                Destroy(this.gameObject);
+                pylr.setThrown(false);
+                bombSource.Play();
+            }
+   
+        }
+
+
     }
 }
