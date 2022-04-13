@@ -480,6 +480,7 @@ public class player : MonoBehaviour
     private void endShoot()
     {
         anim.SetBool("isShooting", false);
+        canShoot = true;
     }
 
     public void UnlockFragment(int index)
