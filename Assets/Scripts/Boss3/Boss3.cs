@@ -114,7 +114,7 @@ public class Boss3 : MonoBehaviour
 
     private void ChooseAttack()
     {
-
+        
         attack = Random.Range(0, 5);
         print(attack);
 

@@ -11,6 +11,9 @@ public class FinalBoss : MonoBehaviour
     [SerializeField] private GameObject final;
 
     [SerializeField] private GameObject b1;
+    [SerializeField] private GameObject b2;
+    [SerializeField] private GameObject ceiling;
+    [SerializeField] private GameObject b3;
 
 
 
@@ -19,8 +22,10 @@ public class FinalBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ceiling.SetActive(false);
         final.SetActive(false);
-        //StartCoroutine(Testing());
+
+       // StartCoroutine(Testing());
     }
 
     // Update is called once per frame
@@ -38,7 +43,8 @@ public class FinalBoss : MonoBehaviour
     {
 
         yield return new WaitForSeconds(3);
-        Instantiate(b1, spawn.position, Quaternion.Euler(0f, 0f, 0f));
+        ceiling.SetActive(true);
+        Instantiate(b3, spawn.position, Quaternion.Euler(0f, 0f, 0f));
     }
 
     private void FinalPhase()

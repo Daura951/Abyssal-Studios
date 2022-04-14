@@ -5,7 +5,9 @@ using UnityEngine;
 public class bomba : MonoBehaviour
 {
     [SerializeField] private GameObject adios;
-    
+    [SerializeField] private GameObject adios2;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class bomba : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(5);
         adios.SetActive(false);
+        adios2.SetActive(false);
         Destroy(this.gameObject);
 
     }
