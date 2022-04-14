@@ -12,24 +12,12 @@ public class Fragment : MonoBehaviour
 
     void Start()
     {
-        for(int i = 0; i < 12; i++)
+        for(int i = 0; i < 9; i++)
         {
-            if(i!=0)
+            if (PlayerPrefs.GetInt(GameObject.FindGameObjectWithTag("Player").GetComponent<player>().fragmentSaveNames[i]) == 1 && i == Frag)
             {
-                if (PlayerPrefs.GetInt(GameObject.FindGameObjectWithTag("Player").GetComponent<player>().fragmentSaveNames[i]) == 1 && i + 1 == Frag)
-                {
-                    Destroy(this.gameObject);
-                }
+                Destroy(this.gameObject);
             }
-
-            else
-            {
-                if (PlayerPrefs.GetInt(GameObject.FindGameObjectWithTag("Player").GetComponent<player>().fragmentSaveNames[i]) == 1 && i == Frag)
-                {
-                    Destroy(this.gameObject);
-                }
-            }
-           
         }
     }
     

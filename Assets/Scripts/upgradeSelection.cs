@@ -7,9 +7,9 @@ public class upgradeSelection : MonoBehaviour
     public Animator oneAnim;
     public Animator twoAnim;
     public Animator threeAnim;
-    public Animator fourAnim;
 
-    public bool[] isActives = { true, false, false, false };
+
+    public bool[] isActives = { true, false, false };
     // Start is called before the first frame update
     void Start()
     {
@@ -73,27 +73,10 @@ public class upgradeSelection : MonoBehaviour
 
         }
 
-        else if (Input.GetKeyDown(KeyCode.Alpha4) && !isActives[3])
-        {
-            for (int i = 0; i < isActives.Length; i++)
-            {
-                switch (i)
-                {
-                    case 3:
-                        isActives[i] = true;
-                        break;
-
-                    default:
-                        isActives[i] = false;
-                        break;
-                }
-            }
-
-        }
         oneAnim.SetBool("isActive", isActives[0]);
         twoAnim.SetBool("isActive", isActives[1]);
         threeAnim.SetBool("isActive", isActives[2]);
-        fourAnim.SetBool("isActive", isActives[3]);
+   
     }
 
 }

@@ -11,11 +11,11 @@ public class Bomb : MonoBehaviour
     private AudioSource bombSource;
     void Start()
     {
-        if(pylr.GetComponent<Fraglog>().getCheck(7))
+        if(pylr.GetComponent<Fraglog>().getCheck(4))
         {
             detonationTime = 2;
         }
-        else if(pylr.GetComponent<Fraglog>().getCheck(8))
+        else if(pylr.GetComponent<Fraglog>().getCheck(5))
         {
             detonationTime = 5;
         }

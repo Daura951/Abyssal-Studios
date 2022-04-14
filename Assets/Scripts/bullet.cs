@@ -26,7 +26,7 @@ public class bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
        
-        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Ground")
         Destroy(this.gameObject);
 
 
@@ -52,7 +52,5 @@ public class bullet : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        if(this.gameObject.tag != "EShot")
-            GameObject.FindGameObjectWithTag("Player").GetComponent<player>().canShoot = true;
     }
 }

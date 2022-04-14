@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fraglog : MonoBehaviour
 {
-    public static int[] FLog = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public static int[] FLog = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0};
     private int checkers;
     public GameObject FragUI;
     public GameObject Alpha;
@@ -16,9 +16,6 @@ public class Fraglog : MonoBehaviour
     public GameObject Gamma;
     public GameObject Hotel;
     public GameObject India;
-    public GameObject Juliet;
-    public GameObject Kilo;
-    public GameObject Lima;
     static private bool check1 = false;
     static private bool check2 = false;
     static private bool check3 = false;
@@ -28,9 +25,6 @@ public class Fraglog : MonoBehaviour
     static private bool check7 = false;
     static private bool check8 = false;
     static private bool check9  = false;
-    static private bool check10 = false;
-    static private bool check11 = false;
-    static private bool check12 = false;
 
 
     void Start()
@@ -50,13 +44,12 @@ public class Fraglog : MonoBehaviour
         Gamma.SetActive(check7);
         Hotel.SetActive(check8);
         India.SetActive(check9);
-        Juliet.SetActive(check10);
-        Kilo.SetActive(check11);
-        Lima.SetActive(check12);
+
     }
 
     public int CheckFrag( int _frag )
     {
+        print(_frag);
         checkers = FLog[_frag];
         return checkers;
     }
@@ -100,18 +93,6 @@ public class Fraglog : MonoBehaviour
         {
              check9 = newVal; 
         }
-        else if (checkIndex == 9)
-        {
-             check10 = newVal; 
-        }
-        else if (checkIndex == 10)
-        {
-             check11 = newVal; 
-        }
-        else
-        {
-             check12 = newVal; 
-        }
     }
 
     public bool getCheck(int checkIndex)
@@ -149,22 +130,11 @@ public class Fraglog : MonoBehaviour
         {
             return check8;
         }
-        else if (checkIndex == 8)
+        else  
         {
             return check9;
         }
-        else if (checkIndex == 9)
-        {
-            return check10;
-        }
-        else if(checkIndex == 10)
-        {
-            return check11;
-        }
-        else
-        {
-            return check12;
-        }
+     
     }
 
     public void UpdateFrag(int _frick)
@@ -205,18 +175,6 @@ public class Fraglog : MonoBehaviour
         else if (_frick == 8)
         {
             check9 = true;
-        }
-        else if (_frick == 9)
-        {
-            check10 = true;
-        }
-        else if (_frick == 10)
-        {
-            check11 = true;
-        }
-        else
-        {
-            check12 = true;
         }
 
     }

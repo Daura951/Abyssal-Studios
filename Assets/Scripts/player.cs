@@ -39,10 +39,13 @@ public class player : MonoBehaviour
     public float startDashTime;
     private int dir;
     private bool canDash = false;
+    private bool canDoubleDash = false;
+    private bool canTripleDash = false;
+    private int dashAmt = 1;
 
 
     //For Wall Jumping
-    private bool isWallJumpUnlocked = false;
+    private bool isWallJumpUnlocked = true;
     public float wallSlidingSpeed;
 
     private bool wallJumping;
@@ -85,21 +88,19 @@ public class player : MonoBehaviour
     public static GameObject Gamma;
     public static GameObject Hotel;
     public static GameObject India;
-    public static GameObject Juliet;
-    public static GameObject Kilo;
-    public static GameObject Lima;
+
     private int totalFrags;
 
 
     private bool canInteract = false;
     private GameObject currentNPC;
-    public string[] fragmentSaveNames = { "Frag0", "Frag1", "Frag2", "Frag3", "Frag4", "Frag5", "Frag6", "Frag7", "Frag8", "Frag9", "Frag10", "Frag11" };
+    public string[] fragmentSaveNames = { "Frag0", "Frag1", "Frag2", "Frag3", "Frag4", "Frag5", "Frag6", "Frag7", "Frag8" };
 
 
 
     private void Awake()
     {
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 9; i++)
         {
             if (PlayerPrefs.GetInt(fragmentSaveNames[i]) == 1)
             {
@@ -140,31 +141,25 @@ public class player : MonoBehaviour
         grappleSource =  GameObject.FindGameObjectWithTag(sourceTags[3]).GetComponent<AudioSource>();
 
         FragUI = GameObject.FindWithTag("Fragment");
-        Alpha = FragUI.transform.GetChild(12).gameObject;
+        Alpha = FragUI.transform.GetChild(0).gameObject;
         Alpha.SetActive(false);
-        Bravo = FragUI.transform.GetChild(2).gameObject;
+        Bravo = FragUI.transform.GetChild(1).gameObject;
         Bravo.SetActive(false);
-        Charlie = FragUI.transform.GetChild(3).gameObject;
+        Charlie = FragUI.transform.GetChild(2).gameObject;
         Charlie.SetActive(false);
-        Delta = FragUI.transform.GetChild(4).gameObject;
+        Delta = FragUI.transform.GetChild(3).gameObject;
         Delta.SetActive(false);
-        Echo = FragUI.transform.GetChild(5).gameObject;
+        Echo = FragUI.transform.GetChild(4).gameObject;
         Echo.SetActive(false);
-        Foxtrot = FragUI.transform.GetChild(6).gameObject;
+        Foxtrot = FragUI.transform.GetChild(5).gameObject;
         Foxtrot.SetActive(false);
-        Gamma = FragUI.transform.GetChild(7).gameObject;
+        Gamma = FragUI.transform.GetChild(6).gameObject;
         Gamma.SetActive(false);
-        Hotel = FragUI.transform.GetChild(8).gameObject;
+        Hotel = FragUI.transform.GetChild(7).gameObject;
         Hotel.SetActive(false);
-        India = FragUI.transform.GetChild(9).gameObject;
+        India = FragUI.transform.GetChild(8).gameObject;
         India.SetActive(false);
-        Juliet = FragUI.transform.GetChild(10).gameObject;
-        Juliet.SetActive(false);
-        Kilo = FragUI.transform.GetChild(11).gameObject;
-        Kilo.SetActive(false);
-        Lima = FragUI.transform.GetChild(1).gameObject;
-        Lima.SetActive(false);
-
+  
     }
 
     private void FixedUpdate()
@@ -172,11 +167,11 @@ public class player : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.R))
         {
-            for(int i = 0; i < 12; i++)
+            for(int i = 0; i < 9; i++)
             {
                 PlayerPrefs.SetInt(fragmentSaveNames[i], 0);
             }
-            Application.LoadLevel(7);
+            Application.LoadLevel(0);
             
         }
 
@@ -274,7 +269,7 @@ public class player : MonoBehaviour
         }
 
         //print(upgrades.isActives[2] + " " + isBombUnlocked + " " + Input.GetKeyDown(KeyCode.X) + " " + !thrown);
-        if (upgrades.isActives[2] && isBombUnlocked && Input.GetKeyDown(KeyCode.X) && !thrown)
+        if (upgrades.isActives[1] && isBombUnlocked && Input.GetKeyDown(KeyCode.X) && !thrown)
         {
             GameObject bombInst = Instantiate(bomb, bulletOrigin.position, Quaternion.identity);
             if (isRight)
@@ -286,7 +281,7 @@ public class player : MonoBehaviour
             thrown = !thrown;
         }
 
-        if (upgrades.isActives[3] && isGrapleUnlocked)
+        if (upgrades.isActives[2] && isGrapleUnlocked)
         {
 
             if (joint.distance > .5f)
@@ -378,7 +373,7 @@ public class player : MonoBehaviour
             dashTime = startDashTime;
             canDash = false;
         }
-        if (collision.gameObject.tag == "Wall" && upgrades.isActives[1] && isWallJumpUnlocked)
+        if (collision.gameObject.tag == "Wall"  && isWallJumpUnlocked)
         {
             isGrounded = true;
         }
@@ -399,6 +394,15 @@ public class player : MonoBehaviour
         {
             isGrounded = false;
             canDash = true;
+
+            if (canDoubleDash)
+                dashAmt = 2;
+
+            else if (canTripleDash)
+                dashAmt = 3;
+
+
+            else dashAmt = 1;
         
         }
 
@@ -428,14 +432,18 @@ public class player : MonoBehaviour
     {
         if (dir == 0)
         {
-            if (!isRight && Input.GetKeyDown(KeyCode.X) && canDash)
+            if (!isRight && Input.GetKeyDown(KeyCode.X) && canDash && dashAmt!=0)
             {
                 dir = 1;
+                print(dashAmt);
+                dashAmt--;
             }
 
-            else if (isRight && Input.GetKeyDown(KeyCode.X) && canDash)
+            else if (isRight && Input.GetKeyDown(KeyCode.X) && canDash && dashAmt!=0)
             {
                 dir = 2;
+                print(dashAmt);
+                dashAmt--;
             }
 
             
@@ -448,7 +456,7 @@ public class player : MonoBehaviour
             {
                 dir = 0;
 
-                if (isGrounded)
+                if (isGrounded || dashTime!=0)
                     dashTime = startDashTime;
             }
 
@@ -466,6 +474,7 @@ public class player : MonoBehaviour
 
                 else if (dir == 2)
                     rb.AddForce(Vector2.right * dashSpeed);
+               
             }
          
         }
@@ -480,6 +489,7 @@ public class player : MonoBehaviour
     private void endShoot()
     {
         anim.SetBool("isShooting", false);
+        canShoot = true;
     }
 
     public void UnlockFragment(int index)
@@ -500,32 +510,27 @@ public class player : MonoBehaviour
                 break;
 
             case 1:
-                dashSpeed += 10;
+                canDoubleDash = true;
                 break;
 
             case 2:
-                dashSpeed += 10;
+                canTripleDash = true;
+                canDoubleDash = false;
+                dashAmt = 3;
                 break;
             case 3:
-                isWallJumpUnlocked = true;
-                break;
-            case 4:
-                jumpForce = 7;
-                break;
-            case 5:
-                jumpForce = 8;
-                break;
-            case 6:
                 isBombUnlocked = true;
                 break;
-            case 9:
+            case 6:
                 isGrapleUnlocked = true;
+                GameObject grapple = GameObject.FindGameObjectWithTag("grapRad");
+                grapple.GetComponent<CircleCollider2D>().radius = 1.0f;
                 break;
-            case 10:
+            case 7:
                 GameObject grappler = GameObject.FindGameObjectWithTag("grapRad");
                 grappler.GetComponent<CircleCollider2D>().radius = 1.5f;
                 break;
-            case 11:
+            case 8:
                 GameObject grapply = GameObject.FindGameObjectWithTag("grapRad");
                 grapply.GetComponent<CircleCollider2D>().radius = 2.0f;
                 break;
