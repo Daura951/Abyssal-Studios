@@ -1,6 +1,2 @@
-Friend: " Hello. How are you?"
-Player: " Where am I?"
-Friend: " We are in the war! What, did you get shellshock or something?"
-Player: " What are you talking about, the war ended years ago, how are you here?"
-Friend: " What are you going on about? I go ahead and take out the enemy!"
+Friend: " Hello"
 END

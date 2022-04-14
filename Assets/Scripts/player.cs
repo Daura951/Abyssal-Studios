@@ -523,6 +523,8 @@ public class player : MonoBehaviour
                 break;
             case 6:
                 isGrapleUnlocked = true;
+                GameObject grapple = GameObject.FindGameObjectWithTag("grapRad");
+                grapple.GetComponent<CircleCollider2D>().radius = 1.0f;
                 break;
             case 7:
                 GameObject grappler = GameObject.FindGameObjectWithTag("grapRad");
