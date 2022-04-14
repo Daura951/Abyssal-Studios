@@ -12,6 +12,7 @@ public class ouchblasts : MonoBehaviour
     {
         damage = 1;
         Physics2D.IgnoreLayerCollision(0, 13, true);
+        Physics2D.IgnoreLayerCollision(6, 13, true);
     }
 
     // Update is called once per frame
@@ -30,6 +31,18 @@ public class ouchblasts : MonoBehaviour
             collision.gameObject.GetComponent<Health>().TakeDamage(damage);
             Destroy(this.gameObject);
         }
+
+        if (collision.gameObject.tag == "Ground")
+            Destroy(this.gameObject);
+
+        else if (collision.gameObject.tag == "Wall")
+            Destroy(this.gameObject);
+
+        else if (collision.gameObject.tag == "ExWall")
+            Destroy(this.gameObject);
+
+        else if (collision.gameObject.tag == "NWall")
+            Destroy(this.gameObject);
 
     }
     

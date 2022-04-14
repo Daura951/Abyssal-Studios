@@ -39,8 +39,12 @@ public class bullet : MonoBehaviour
         else if (collision.gameObject.tag == "NWall")
             Destroy(this.gameObject);
 
+        else if (collision.gameObject.tag == "Slot")
+            Destroy(this.gameObject);
 
-        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
+
+
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
 
         {
             Destroy(this.gameObject);
