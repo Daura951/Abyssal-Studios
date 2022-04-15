@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss3 : MonoBehaviour
 {
@@ -60,6 +61,8 @@ public class Boss3 : MonoBehaviour
         {
             Destroy(this.gameObject);
             anim = GetComponent<Animator>();
+            PlayerPrefs.SetInt("Boss3", 1);
+            SceneManager.LoadScene(2);
         }
 
         if(cn)

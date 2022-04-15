@@ -6,33 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Player/Scenes/Title.unity
+    path: Assets/Scenes/Scenes/Title.unity
     guid: 349c27d1a6f50a44b8535ba1c019afe5
   - enabled: 1
-    path: Assets/Player/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Beta/Hub.unity
+    guid: 149132ba87ec34a4f8901a94e2fca70f
   - enabled: 1
-    path: Assets/Player/Scenes/TestScene.unity
-    guid: d357de5f54b74e5428b8a141a272afe1
+    path: Assets/Scenes/Beta/W1.unity
+    guid: f209d696afac4e143a8820003a815e47
   - enabled: 1
-    path: Assets/Player/Scenes/WallJumpTest.unity
-    guid: 7b258adf15f07eb4296417fd872f7f25
-  - enabled: 1
-    path: Assets/Player/Scenes/Bomb.unity
-    guid: 2b0236088a9647141b809918ac629b4b
-  - enabled: 1
-    path: Assets/Player/Scenes/FragTest.unity
-    guid: 178e053ac197d61419e1f14db2c9a4cc
-  - enabled: 1
-    path: Assets/Player/Scenes/Alpha/AlphaHub.unity
-    guid: 077b44097dd1e9b478e4ca75ceb8f942
-  - enabled: 1
-    path: Assets/Player/Scenes/Alpha/AlphaWorld1.unity
-    guid: 605db0edd69424d4faef2146a0bddc4e
-  - enabled: 1
-    path: Assets/Player/Scenes/Alpha/AlphaWorld2.unity
-    guid: c9866fa3b38904b4dbf7672aec43fc9e
-  - enabled: 1
-    path: Assets/Player/Scenes/Boss_Testing/BossTest.unity
+    path: Assets/Scenes/Scenes/Boss_Testing/BossTest.unity
     guid: 3e26fccdf70ff7547b50b987a44c735c
+  - enabled: 1
+    path: Assets/Scenes/Beta/W2.unity
+    guid: ce9b6bbec367b2546bbf39a8acf2aa95
+  - enabled: 1
+    path: Assets/Scenes/Scenes/Boss_Testing/Boss2.unity
+    guid: b7e1b633965ad9041868aee61a083e37
+  - enabled: 1
+    path: Assets/Scenes/Beta/W3.unity
+    guid: e9503b01c7b127748980b3131a039a62
+  - enabled: 1
+    path: Assets/Scenes/Scenes/Boss_Testing/Boss3.unity
+    guid: 2ecfbcf51db0a5c469e211aa6c622575
+  - enabled: 1
+    path: Assets/Scenes/Beta/Finish.unity
+    guid: f775c2d4440855543b55a86d9b3aa4b6
   m_configObjects: {}

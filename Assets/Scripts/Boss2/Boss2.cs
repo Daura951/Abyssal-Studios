@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss2 : MonoBehaviour
 {
@@ -155,6 +156,11 @@ public class Boss2 : MonoBehaviour
             {
                 anims.SetTrigger("phase2");
 
+            }
+            else if(limit.currentHealth<0)
+            {
+                PlayerPrefs.SetInt("Boss2", 1);
+                SceneManager.LoadScene(2);
             }
             else
             {

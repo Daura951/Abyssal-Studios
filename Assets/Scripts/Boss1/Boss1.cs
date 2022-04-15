@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss1 : MonoBehaviour
 {
@@ -72,6 +73,13 @@ public class Boss1 : MonoBehaviour
         else
         {
             anim.ResetTrigger("sight");
+        }
+
+        if(gameObject.GetComponent<Health>().currentHealth<0)
+        {
+            PlayerPrefs.SetInt("Boss1", 1);
+            SceneManager.LoadScene(2);
+            
         }
 
     }

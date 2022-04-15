@@ -55,6 +55,7 @@ public class bullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
+        if(collision.gameObject.tag!="Player")
+        Destroy(this.gameObject);
     }
 }

@@ -599,7 +599,7 @@ MonoBehaviour:
   - Frag9
   - Frag10
   - Frag11
-  openingScene: 10
+  openingScene: 1
 --- !u!4 &267057163
 Transform:
   m_ObjectHideFlags: 0
