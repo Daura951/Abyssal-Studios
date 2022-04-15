@@ -162,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 955287876351885022}
   - component: {fileID: 5395918042215352846}
-  m_Layer: 3
+  m_Layer: 18
   m_Name: Grapple
   m_TagString: grapRad
   m_Icon: {fileID: 0}
@@ -323,12 +323,12 @@ MonoBehaviour:
   distance: 3
   mask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 8
   step: 0.05
   isGrappling: 0
   grapple: {x: 0, y: 0}
   grappleObj: {fileID: 0}
-  FragUI: {fileID: 0}
+  FragUI: {fileID: 9029612795271888579}
   fragmentSaveNames:
   - Frag0
   - Frag1
