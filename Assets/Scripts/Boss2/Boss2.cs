@@ -423,4 +423,10 @@ public class Boss2 : MonoBehaviour
         PushBack();
 
     }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("Boss2", 1);
+        SceneManager.LoadScene(1);
+    }
 }

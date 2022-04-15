@@ -254,4 +254,10 @@ public class Boss3 : MonoBehaviour
         
     }
 
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("Boss3", 1);
+        SceneManager.LoadScene(1);
+    }
+
 }

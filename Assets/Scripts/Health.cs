@@ -35,6 +35,7 @@ public class Health : MonoBehaviour
             if (gameObject.tag == "Enemy" || gameObject.tag == "Boss")
             {
                 Destroy(gameObject); 
+                
             }
             else
             {

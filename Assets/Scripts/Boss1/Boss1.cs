@@ -75,10 +75,10 @@ public class Boss1 : MonoBehaviour
             anim.ResetTrigger("sight");
         }
 
-        if(gameObject.GetComponent<Health>().currentHealth<0)
+        if(GetComponent<Health>().currentHealth<0)
         {
-            PlayerPrefs.SetInt("Boss1", 1);
-            SceneManager.LoadScene(2);
+            print("uwu");
+            Destroy(gameObject); 
             
         }
 
@@ -144,6 +144,12 @@ public class Boss1 : MonoBehaviour
 
         }
         
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("Boss1", 1);
+        SceneManager.LoadScene(1);
     }
 
     public void LittleLeapPart1()
