@@ -51,11 +51,12 @@ public class RangedEnemy : MonoBehaviour
         cooldownTimer = 0;
         if (this.transform.position.x < shotPoint.position.x)
         {
-            Instantiate(shot, shotPoint.position, Quaternion.identity, this.transform);
+            Instantiate(shot, shotPoint.position, Quaternion.Euler(0f, 0f, 0f));
+
         }
         else
         {
-            Instantiate(shot, shotPoint.position, Quaternion.Euler (180f, 0f, 0f), this.transform);
+            Instantiate(shot, shotPoint.position, Quaternion.Euler(0f, 0f, 180f));
         }
         
     }

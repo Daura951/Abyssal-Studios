@@ -9,6 +9,7 @@ public class pushbackblast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(13, 13, true);
         //Add layer collisons at some point - V
     }
 

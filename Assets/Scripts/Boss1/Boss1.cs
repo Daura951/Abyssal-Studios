@@ -75,12 +75,7 @@ public class Boss1 : MonoBehaviour
             anim.ResetTrigger("sight");
         }
 
-        if(gameObject.GetComponent<Health>().currentHealth<0)
-        {
-            PlayerPrefs.SetInt("Boss1", 1);
-            SceneManager.LoadScene(2);
-            
-        }
+
 
     }
 
@@ -308,4 +303,13 @@ public class Boss1 : MonoBehaviour
         rightSide = !rightSide;
         anim.SetTrigger("end");
     }
-}
+
+    private void OnDestroy()
+    { 
+            PlayerPrefs.SetInt("Boss1", 1);
+            SceneManager.LoadScene(4);
+        }
+
+
+
+    }
