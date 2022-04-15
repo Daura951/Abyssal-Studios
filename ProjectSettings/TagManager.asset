@@ -25,12 +25,9 @@ TagManager:
   - ShootSFX
   - JumpSFX
   - Boss
-
   - EShot
-
-  - Slot
   - Bomb
-
+  - Slot
   layers:
   - Default
   - TransparentFX
@@ -50,7 +47,7 @@ TagManager:
   - NoPlayer
   - SpecialBoy
   - Dice
-  - 
+  - player
   - 
   - 
   - 

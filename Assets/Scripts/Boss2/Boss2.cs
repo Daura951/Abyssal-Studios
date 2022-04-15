@@ -127,11 +127,13 @@ public class Boss2 : MonoBehaviour
         {
             anims.SetTrigger("Sight");
             sight = true;
+            print("how");
         }
         else
         {
             anims.ResetTrigger("Sight");
             sight = false;
+            print("why");
         }
 
         if (PlayerOnStage())

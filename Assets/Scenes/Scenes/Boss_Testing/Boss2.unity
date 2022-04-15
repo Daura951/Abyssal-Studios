@@ -5558,6 +5558,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1558233249158339600, guid: 0d41523cc682e6a4fa8ed496ef71a6df, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 2534099833470001667, guid: 0d41523cc682e6a4fa8ed496ef71a6df, type: 3}
       propertyPath: m_Name
       value: player
@@ -6379,7 +6383,7 @@ GameObject:
   - component: {fileID: 1903618921}
   - component: {fileID: 1903618920}
   - component: {fileID: 1903618926}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Boss2
   m_TagString: Boss
   m_Icon: {fileID: 0}
