@@ -38,6 +38,8 @@ public class Boss1 : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
 
 
+    [SerializeField] private bool hack;
+
     private void Awake()
     {
         initialDirection = this.transform.localScale;
@@ -148,8 +150,16 @@ public class Boss1 : MonoBehaviour
 
     private void OnDestroy()
     {
-        PlayerPrefs.SetInt("Boss1", 1);
-        SceneManager.LoadScene(1);
+        if (!hack)
+        {
+            PlayerPrefs.SetInt("Boss1", 1);
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            GameObject.Find("evilplayerlmao").GetComponent<Health>().TakeDamage(1);
+        }
+
     }
 
     public void LittleLeapPart1()

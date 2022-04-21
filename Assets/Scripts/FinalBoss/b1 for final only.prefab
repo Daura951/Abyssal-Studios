@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 7579221178778850405}
   - component: {fileID: 7579221178778850404}
   - component: {fileID: 7579221178778850407}
+  - component: {fileID: 4911841658005101284}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Boss
@@ -392,7 +393,21 @@ MonoBehaviour:
   boxCollider: {fileID: 7579221178778850328}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 8
+  hack: 1
+--- !u!114 &4911841658005101284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579221178778850406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64c22b035257014cb503fe90bc18d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatever: {fileID: 8855477682105319497}
 --- !u!1 &8855477682105319497
 GameObject:
   m_ObjectHideFlags: 0

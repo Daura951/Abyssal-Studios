@@ -33,6 +33,7 @@ public class Boss3 : MonoBehaviour
     private bool sy;
     private bool bo;
 
+    [SerializeField] private bool hack;
 
     void Start()
     {
@@ -251,13 +252,22 @@ public class Boss3 : MonoBehaviour
         di = false;
         sy = false;
         bo = false;
+        print("reset complete");
+
         
     }
 
     private void OnDestroy()
     {
-        PlayerPrefs.SetInt("Boss3", 1);
-        SceneManager.LoadScene(1);
+        if (!hack)
+        {
+            PlayerPrefs.SetInt("Boss3", 1);
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            GameObject.Find("evilplayerlmao").GetComponent<Health>().TakeDamage(1);   
+        }
     }
 
 }
