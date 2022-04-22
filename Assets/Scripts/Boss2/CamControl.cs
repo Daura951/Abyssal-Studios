@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CamControl : MonoBehaviour
 {
-    [SerializeField] Camera player;
-    [SerializeField] Camera boss;
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject boss;
     [SerializeField] private float range;
     [SerializeField] private float vert;
     [SerializeField] private float colliderDistance;
@@ -17,8 +17,8 @@ public class CamControl : MonoBehaviour
     void Start()
     {
         holdup = 1;
-        player.enabled = false;
-        boss.enabled = true;
+        player.SetActive(false);
+        boss.SetActive(true);
         StartCoroutine(ShowOff());
     }
 
@@ -27,13 +27,13 @@ public class CamControl : MonoBehaviour
     {
         if(PlayerInSight())
         {
-            player.enabled = false;
-            boss.enabled = true;
+            player.SetActive(false);
+            boss.SetActive(true);
         }
         else if (holdup != 1)
         {
-            player.enabled = true;
-            boss.enabled = false;
+            player.SetActive(true);
+            boss.SetActive(false);
         }
 
     }
@@ -61,8 +61,8 @@ public class CamControl : MonoBehaviour
     {
 
         yield return new WaitForSeconds(5);
-        player.enabled = true;
-        boss.enabled = false;
+        player.SetActive(true);
+        boss.SetActive(false);
         holdup = 0;
 
     }
