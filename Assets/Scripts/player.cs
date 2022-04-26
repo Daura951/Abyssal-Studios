@@ -406,6 +406,11 @@ public class player : MonoBehaviour
         
         }
 
+        if(collision.gameObject.tag == "NWall")
+        {
+            canDash = true;
+        }
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

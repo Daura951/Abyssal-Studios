@@ -65,70 +65,72 @@ public class DialogueParser : MonoBehaviour
             {
                 dialogueBox.SetActive(false);
                 isEnd = true;
+                name.text = "";
             }
 
-
-            int start = 0;
-            bool isNameFound = false;
-            for(int i = 0; i < tokens.Length; i++)
+            else
             {
-                string token = tokens[i];
-
-                for (int j = 0; j < token.Length; j++)
+                int start = 0;
+                bool isNameFound = false;
+                for (int i = 0; i < tokens.Length; i++)
                 {
-                    if (token[j] != ':')
-                    {
-                        strName += token[j];
-                    }
+                    string token = tokens[i];
 
-                    else
-                    {
-                        isNameFound = true;
-                        break;
-                    }
-
-                }
-
-                if (isNameFound)
-                    break;
-
-                start++;
-
-            }
-
-            name.text = strName;
-            
-
-            for(int i = start; i < tokens.Length; i++)
-            {
-                string token = tokens[i];
-                if(i==start)
-                {
-                    token = token.Substring(1);
-                }
-
-                else
-                {
                     for (int j = 0; j < token.Length; j++)
                     {
-                        if (token[j] != '\"')
+                        if (token[j] != ':')
                         {
-                            strDialogue += token[j];
+                            strName += token[j];
                         }
 
                         else
                         {
+                            isNameFound = true;
                             break;
                         }
+
                     }
 
-                    strDialogue += ' ';
+                    if (isNameFound)
+                        break;
+
+                    start++;
+
                 }
+
+                name.text = strName;
+
+
+                for (int i = start; i < tokens.Length; i++)
+                {
+                    string token = tokens[i];
+                    if (i == start)
+                    {
+                        token = token.Substring(1);
+                    }
+
+                    else
+                    {
+                        for (int j = 0; j < token.Length; j++)
+                        {
+                            if (token[j] != '\"')
+                            {
+                                strDialogue += token[j];
+                            }
+
+                            else
+                            {
+                                break;
+                            }
+                        }
+
+                        strDialogue += ' ';
+                    }
+                }
+
+                dialogue.text = strDialogue;
+                isFinished = true;
             }
-
-            dialogue.text = strDialogue;
-            isFinished = true;
-
 
 
         }

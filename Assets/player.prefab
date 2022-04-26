@@ -323,7 +323,7 @@ MonoBehaviour:
   distance: 3
   mask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1024
   step: 0.05
   isGrappling: 0
   grapple: {x: 0, y: 0}
