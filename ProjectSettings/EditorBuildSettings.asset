@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Beta/W1.unity
     guid: f209d696afac4e143a8820003a815e47
   - enabled: 1
-    path: Assets/Scenes/Scenes/Boss_Testing/BossTest.unity
-    guid: 3e26fccdf70ff7547b50b987a44c735c
+    path: Assets/Scenes/Beta/BossW1.unity
+    guid: 37d9e2f208dfe1b42a7484148199edb8
   - enabled: 1
     path: Assets/Scenes/Beta/W2.unity
     guid: ce9b6bbec367b2546bbf39a8acf2aa95
