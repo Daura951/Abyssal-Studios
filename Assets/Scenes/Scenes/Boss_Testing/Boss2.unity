@@ -31908,8 +31908,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbac4084bef456d4ea0ac0434f9c400e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 440896352}
-  boss: {fileID: 1463745768}
+  player: {fileID: 440896350}
+  boss: {fileID: 1463745766}
   range: 32.57
   vert: 14.93
   colliderDistance: -0.66
