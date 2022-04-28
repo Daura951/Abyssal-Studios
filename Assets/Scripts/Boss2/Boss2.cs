@@ -85,11 +85,11 @@ public class Boss2 : MonoBehaviour
 
        if(rightSide)
         {
-            this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
+            this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * -1, initialDirection.y, initialDirection.z);
         }
         else
         {
-            this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * -1, initialDirection.y, initialDirection.z);
+            this.transform.localScale = new Vector3(Mathf.Abs(initialDirection.x) * 1, initialDirection.y, initialDirection.z);
         }
     
         
@@ -317,8 +317,10 @@ public class Boss2 : MonoBehaviour
 
     private IEnumerator GetOut()
     {
+        yield return new WaitForSeconds(1);
         ForwardShot();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
+
     }
 
     private void MoveInDirection(int _direction)
