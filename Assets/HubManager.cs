@@ -16,7 +16,7 @@ public class HubManager : MonoBehaviour
     {
         if(PlayerPrefs.GetInt("Boss1") == 1 && PlayerPrefs.GetInt("Boss2") == 1 && PlayerPrefs.GetInt("Boss3") == 1)
         {
-            SceneManager.LoadScene(9);
+            SceneManager.LoadScene(14);
         }
     }
 }

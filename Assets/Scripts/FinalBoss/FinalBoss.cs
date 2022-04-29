@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalBoss : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class FinalBoss : MonoBehaviour
         }
         else if(limit.currentHealth == 4)
         {
+            ceiling.SetActive(false);
             StartCoroutine(Leaving());
             limit.currentHealth = 3;
         }
@@ -91,7 +93,7 @@ public class FinalBoss : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         //ScreenShake(.5f, 1f);
-        StartCoroutine(Leaving());
+        StartCoroutine(NoDicePls());
     }
 
     private IEnumerator StartFight()

@@ -37,6 +37,12 @@ public class Health : MonoBehaviour
                 Destroy(gameObject); 
                 
             }
+            else if(gameObject.tag == "final")
+            {
+                Destroy(gameObject);
+                SceneManager.LoadScene(2);
+                
+            }
             else
             {
                 if (gameObject.tag == "Player")

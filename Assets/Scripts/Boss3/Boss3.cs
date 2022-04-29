@@ -62,11 +62,14 @@ public class Boss3 : MonoBehaviour
         {
             Destroy(this.gameObject);
             anim = GetComponent<Animator>();
-            PlayerPrefs.SetInt("Boss3", 1);
-            SceneManager.LoadScene(2);
+            /*if (!hack)
+            {
+                PlayerPrefs.SetInt("Boss3", 1);
+                SceneManager.LoadScene(2);
+            }*/
         }
 
-        if(cn)
+       /* if(cn)
         {
             c.SetActive(true);
         }
@@ -112,7 +115,7 @@ public class Boss3 : MonoBehaviour
         {
             b.SetActive(false);
         }
-
+       */
 
     }
 
