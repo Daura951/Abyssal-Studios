@@ -430,8 +430,21 @@ public class Boss2 : MonoBehaviour
     {
         if (!hack)
         {
-            PlayerPrefs.SetInt("Boss2", 1);
-            SceneManager.LoadScene(1);
+            if (GetComponent<Health>().currentHealth > 0)
+            {
+                PlayerPrefs.SetInt("Boss2", 1);
+                SceneManager.LoadScene(1);
+
+                PlayerPrefs.SetInt("Boss2", 0);
+                SceneManager.LoadScene(2);
+            }
+
+            else if (GetComponent<Health>().currentHealth < 0)
+            {
+                GameObject.Find("evilplayerlmao").GetComponent<Health>().TakeDamage(1);
+                PlayerPrefs.SetInt("Boss2", 1);
+                SceneManager.LoadScene(2);
+            }
         }
         else
         {
