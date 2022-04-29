@@ -43,11 +43,11 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnToHub()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void Quit()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
