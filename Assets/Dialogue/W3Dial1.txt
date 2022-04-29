@@ -1,0 +1,7 @@
+???: " Hello there sir."
+Player: " Huh? Who are you?"
+???: " Isn't it obvious"
+Player: " No not really."
+???: " I'm you!!"
+???: " Well, You before all this happened"
+END

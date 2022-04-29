@@ -1,2 +1,5 @@
 Friend: " Hello"
+Player: " Huh? What are you doing here?"
+Friend: " What? Are you shell shcoked or something? It's the war!!"
+Friend: " Go on out and fight!"
 END
