@@ -28,6 +28,7 @@ TagManager:
   - EShot
   - Bomb
   - Slot
+  - final
   layers:
   - Default
   - TransparentFX
