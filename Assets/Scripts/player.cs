@@ -226,18 +226,21 @@ public class player : MonoBehaviour
                 Invoke("endShoot", .5f);
             }
 
+            print(canShoot + " " + canInteract);
           
-            
+            if(canInteract && !canShoot)
+            {
+                if (currentNPC != null)
+                {
+                    currentNPC.GetComponent<DialogueParser>().setInteracted(true);
+                    print("ugh");
+                }
+                print("ugh");
+            }
     
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            if (currentNPC != null)
-            {
-                currentNPC.GetComponent<DialogueParser>().setInteracted(true);
-            }
-        }
+  
 
         if (rb.velocity.x != 0)
         {
@@ -422,6 +425,7 @@ public class player : MonoBehaviour
         {
             currentNPC = collision.gameObject;
             canInteract = true;
+            canShoot = false;
         }
     }
 
@@ -431,6 +435,7 @@ public class player : MonoBehaviour
         {
             currentNPC = null;
             canInteract = false;
+            canShoot = true;
         }
     }
 

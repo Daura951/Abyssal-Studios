@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Beta/Cutscene3.unity
     guid: dd5d6c7f48fc0b846aef7bdbb62d0eee
+  - enabled: 1
+    path: Assets/Scenes/Beta/HTP.unity
+    guid: e041aa98e45b6d648962c60952a77aad
   m_configObjects: {}

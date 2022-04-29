@@ -44,4 +44,9 @@ public class title : MonoBehaviour
     {
         Application.Quit();
     }
+    public void HTP()
+    {
+        SceneManager.LoadScene(13);
+    }
+
 }
