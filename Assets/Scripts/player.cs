@@ -226,14 +226,17 @@ public class player : MonoBehaviour
                 Invoke("endShoot", .5f);
             }
 
-            else
-            {
-                if(currentNPC!=null)
-                {
-                    currentNPC.GetComponent<DialogueParser>().setInteracted(true);
-                }
-            }
+          
+            
     
+        }
+
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (currentNPC != null)
+            {
+                currentNPC.GetComponent<DialogueParser>().setInteracted(true);
+            }
         }
 
         if (rb.velocity.x != 0)
