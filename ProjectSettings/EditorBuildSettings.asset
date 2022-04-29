@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Scenes/Title.unity
-    guid: 349c27d1a6f50a44b8535ba1c019afe5
+    path: Assets/Scenes/Beta/Logo.unity
+    guid: 87488a872b3a2ec4b9e551e86e363bed
+  - enabled: 1
+    path: Assets/Scenes/Beta/Title.unity
+    guid: 9ef0b6ac31d70a34aa0c227cfef028cb
   - enabled: 1
     path: Assets/Scenes/Beta/Hub.unity
     guid: 149132ba87ec34a4f8901a94e2fca70f
@@ -21,15 +24,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Beta/W2.unity
     guid: ce9b6bbec367b2546bbf39a8acf2aa95
   - enabled: 1
-    path: Assets/Scenes/Scenes/Boss_Testing/Boss2.unity
+    path: Assets/Scenes/Beta/Boss2.unity
     guid: b7e1b633965ad9041868aee61a083e37
   - enabled: 1
     path: Assets/Scenes/Beta/W3.unity
     guid: e9503b01c7b127748980b3131a039a62
   - enabled: 1
-    path: Assets/Scenes/Scenes/Boss_Testing/Boss3.unity
+    path: Assets/Scenes/Beta/Boss3.unity
     guid: 2ecfbcf51db0a5c469e211aa6c622575
   - enabled: 1
     path: Assets/Scenes/Beta/Finish.unity
     guid: f775c2d4440855543b55a86d9b3aa4b6
+  - enabled: 1
+    path: Assets/Scenes/Beta/Cutscene B1.unity
+    guid: 93aef41ecd4bba44496ccf6f6403f516
+  - enabled: 1
+    path: Assets/Scenes/Beta/Cutscene2.unity
+    guid: 827cca73837da1c468e86389ef0c01bd
+  - enabled: 1
+    path: Assets/Scenes/Beta/Cutscene3.unity
+    guid: dd5d6c7f48fc0b846aef7bdbb62d0eee
   m_configObjects: {}

@@ -37,11 +37,14 @@ public class Boss1 : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
 
+    private Health plyrHealth;
+
 
     [SerializeField] private bool hack;
 
     private void Awake()
     {
+        plyrHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         initialDirection = this.transform.localScale;
         rightSide = true;
         anim = GetComponent<Animator>();
@@ -152,8 +155,22 @@ public class Boss1 : MonoBehaviour
     {
         if (!hack)
         {
-            PlayerPrefs.SetInt("Boss1", 1);
-            SceneManager.LoadScene(1);
+            if(GetComponent<Health>().currentHealth > 0)
+            {
+        
+                PlayerPrefs.SetInt("Boss1", 0);
+                SceneManager.LoadScene(2);
+            }
+
+            if(GetComponent<Health>().currentHealth < 0)
+            {
+                PlayerPrefs.SetInt("Boss1", 1);
+                SceneManager.LoadScene(2);
+            }
+
+           
+
+            
         }
         else
         {

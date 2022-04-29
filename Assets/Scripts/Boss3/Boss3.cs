@@ -262,8 +262,18 @@ public class Boss3 : MonoBehaviour
     {
         if (!hack)
         {
-            PlayerPrefs.SetInt("Boss3", 1);
-            SceneManager.LoadScene(1);
+            if(health <= 0)
+            {
+                PlayerPrefs.SetInt("Boss3", 1);
+                SceneManager.LoadScene(2);
+            }
+
+            else
+            {
+                PlayerPrefs.SetInt("Boss3", 0);
+                SceneManager.LoadScene(2);
+            }
+            
         }
         else
         {
