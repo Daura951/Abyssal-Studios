@@ -20,6 +20,13 @@ public class FinalBoss : MonoBehaviour
     private SpriteRenderer sprites;
     private bool moving;
     private bool jumpy;
+
+    [SerializeField] private GameObject cam;
+    private float shaketime;
+    private float shakestrength;
+    private float ex;
+    private float why;
+    private float fade;
     
 
 
@@ -63,105 +70,41 @@ public class FinalBoss : MonoBehaviour
         }
         if (jumpy)
         {
-            this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * speed * -1, this.transform.position.y, this.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x + Time.deltaTime * -1, this.transform.position.y, this.transform.position.z);
         }
 
+        if (shaketime > 0)
+        {
+            shaketime -= Time.deltaTime;
+
+            ex = Random.Range(-1f, 1f) * shakestrength;
+            why = Random.Range(-1f, 1f) * shakestrength;
+
+            cam.transform.position += new Vector3(ex, why, 0f);
+            shakestrength = Mathf.MoveTowards(shakestrength, 0f, fade * Time.deltaTime);
+
+        }
 
     }
 
     private IEnumerator Testing()
     {
-        yield return new WaitForSeconds(.5f);
-        sprites.color = new Color(1, 0, 0, 0.5f);
-        yield return new WaitForSeconds(.5f);
-        sprites.color = new Color(.5f, .5f, .5f, 1);
-        yield return new WaitForSeconds(.5f);
-        sprites.color = new Color(1, 0, 0, 0.5f);
-        yield return new WaitForSeconds(.5f);
-        sprites.color = new Color(.5f, .5f, .5f, 1);
-        yield return new WaitForSeconds(.5f);
-        sprites.color = new Color(1, 0, 0, 0.5f);
-        yield return new WaitForSeconds(.5f);
-        sprites.color = new Color(.5f, .5f, .5f, 1);
-        yield return new WaitForSeconds(.5f);
-        sprites.color = new Color(1, 0, 0, 0.5f);
-        yield return new WaitForSeconds(.5f);
-        sprites.color = new Color(.5f, .5f, .5f, 1);
-        yield return new WaitForSeconds(.5f);
-        sprites.color = new Color(1, 0, 0, 0.5f);
-        yield return new WaitForSeconds(.5f);
-        sprites.color = new Color(.3f, .3f, .3f, 1);
-
-
-        yield return new WaitForSeconds(3);
-        moving = true;
-        yield return new WaitForSeconds(3);
-        FinalPhase();
-        yield return new WaitForSeconds(4);
-        moving = false;
-        yield return new WaitForSeconds(4);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-
-        hitbox.enabled = true;
-
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5f);
+        //ScreenShake(.5f, 1f);
+        StartCoroutine(Leaving());
     }
 
     private IEnumerator StartFight()
     { 
         yield return new WaitForSeconds(3);
+        ScreenShake(.5f, 1f);
         Instantiate(b1, spawn.position, Quaternion.Euler(0f, 0f, 0f));
     }
 
     private IEnumerator Ghostie()
     {
 
+        ScreenShake(1f, 2f);
         yield return new WaitForSeconds(.25f);
         sprites.color = new Color(1, 0, 0, 0.5f);
         yield return new WaitForSeconds(.25f);
@@ -180,7 +123,7 @@ public class FinalBoss : MonoBehaviour
 
     private IEnumerator NoDicePls()
     {
-
+        ScreenShake(1f, 3f);
         yield return new WaitForSeconds(.5f);
         sprites.color = new Color(1, 0, 0, 0.5f);
         yield return new WaitForSeconds(.5f);
@@ -237,33 +180,15 @@ public class FinalBoss : MonoBehaviour
         yield return new WaitForSeconds(3);
         FinalPhase();
         moving = true;
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(6);
         moving = false;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
-        jumpy = true;
-        yield return new WaitForSeconds(.5f);
-        jumpy = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
 
         hitbox.enabled = true;
 
-        jumpy = true;
+        /*jumpy = true;
         yield return new WaitForSeconds(.5f);
         jumpy = false;
         yield return new WaitForSeconds(1);
@@ -291,11 +216,20 @@ public class FinalBoss : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         jumpy = false;
         yield return new WaitForSeconds(1);
+        */
     }
 
     private void FinalPhase()
     {
         final.SetActive(true);
+    }
+
+    private void ScreenShake(float _tim, float _pow)
+    {
+        shaketime = _tim;
+        shakestrength = _pow;
+
+        fade = shakestrength / shaketime;
     }
 
 }
